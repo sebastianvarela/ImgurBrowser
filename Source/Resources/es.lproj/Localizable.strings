@@ -1,0 +1,9 @@
+/* General */
+"General.Alert.ErrorTitle" = "Error";
+"General.Alert.ErrorBody" = "Ha ocurrido un error, por favor inténtalo de nuevo más tarde";
+"General.Alert.CancelButton" = "Cancelar";
+"General.Alert.ApplyButton" = "Aplicar";
+"General.Alert.AcceptButton" = "Aceptar";
+
+/* Home */
+"Home.Title" = "Inicio";

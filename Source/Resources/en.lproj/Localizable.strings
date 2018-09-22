@@ -1,0 +1,9 @@
+/* General */
+"General.Alert.ErrorTitle" = "Error";
+"General.Alert.ErrorBody" = "There has been an error processing the request. Please, try again later.";
+"General.Alert.CancelButton" = "Cancel";
+"General.Alert.ApplyButton" = "Apply";
+"General.Alert.AcceptButton" = "Accept";
+
+/* Home */
+"Home.Title" = "Home";

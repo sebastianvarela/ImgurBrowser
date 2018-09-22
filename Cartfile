@@ -1,1 +1,4 @@
 github "sebastianvarela/Power"
+github "SVProgressHUD/SVProgressHUD"
+github "robb/Cartography"
+github "onevcat/Kingfisher"
