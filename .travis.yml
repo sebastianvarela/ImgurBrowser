@@ -2,7 +2,7 @@ language: swift
 osx_image: xcode10
 
 before_install:
-- carthage bootstrap --configuration Debug --no-use-binaries
+- carthage bootstrap --configuration Debug --no-use-binaries --platform iOS
 
 script:
 - xcodebuild -project ImgurBrowser.xcodeproj -scheme ImgurBrowser -destination "platform=iOS Simulator,name=iPhone 7" -configuration Debug -enableCodeCoverage YES clean build test | xcpretty -f `xcpretty-travis-formatter`
