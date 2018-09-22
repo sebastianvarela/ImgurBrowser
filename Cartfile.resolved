@@ -1,0 +1,4 @@
+github "ReactiveCocoa/ReactiveCocoa" "8.0.0"
+github "ReactiveCocoa/ReactiveSwift" "4.0.0"
+github "antitypical/Result" "4.0.0"
+github "sebastianvarela/Power" "v1.5.2"

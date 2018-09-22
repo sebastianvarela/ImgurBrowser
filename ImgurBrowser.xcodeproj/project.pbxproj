@@ -14,6 +14,26 @@
 		E282051921566F3200E0B220 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E282051721566F3200E0B220 /* LaunchScreen.storyboard */; };
 		E282052421566F3200E0B220 /* ImgurBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E282052321566F3200E0B220 /* ImgurBrowserTests.swift */; };
 		E282052F21566F3200E0B220 /* ImgurBrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E282052E21566F3200E0B220 /* ImgurBrowserUITests.swift */; };
+		E2D74057215676E9009B6E08 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74052215676E9009B6E08 /* ReactiveSwift.framework */; };
+		E2D74058215676E9009B6E08 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74052215676E9009B6E08 /* ReactiveSwift.framework */; };
+		E2D74059215676E9009B6E08 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74052215676E9009B6E08 /* ReactiveSwift.framework */; };
+		E2D7405A215676E9009B6E08 /* ReactiveMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74053215676E9009B6E08 /* ReactiveMapKit.framework */; };
+		E2D7405B215676E9009B6E08 /* ReactiveMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74053215676E9009B6E08 /* ReactiveMapKit.framework */; };
+		E2D7405C215676E9009B6E08 /* ReactiveMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74053215676E9009B6E08 /* ReactiveMapKit.framework */; };
+		E2D7405D215676E9009B6E08 /* Power.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74054215676E9009B6E08 /* Power.framework */; };
+		E2D7405E215676E9009B6E08 /* Power.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74054215676E9009B6E08 /* Power.framework */; };
+		E2D7405F215676E9009B6E08 /* Power.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74054215676E9009B6E08 /* Power.framework */; };
+		E2D74061215676E9009B6E08 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74055215676E9009B6E08 /* Result.framework */; };
+		E2D74062215676E9009B6E08 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74055215676E9009B6E08 /* Result.framework */; };
+		E2D74063215676E9009B6E08 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74056215676E9009B6E08 /* ReactiveCocoa.framework */; };
+		E2D74064215676E9009B6E08 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74056215676E9009B6E08 /* ReactiveCocoa.framework */; };
+		E2D74065215676E9009B6E08 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74056215676E9009B6E08 /* ReactiveCocoa.framework */; };
+		E2D740672156779E009B6E08 /* Power.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74054215676E9009B6E08 /* Power.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E2D740692156779E009B6E08 /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74056215676E9009B6E08 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E2D7406B2156779E009B6E08 /* ReactiveMapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74053215676E9009B6E08 /* ReactiveMapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E2D7406D2156779E009B6E08 /* ReactiveSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74052215676E9009B6E08 /* ReactiveSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E2D7406E2156779E009B6E08 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74055215676E9009B6E08 /* Result.framework */; };
+		E2D7406F2156779E009B6E08 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74055215676E9009B6E08 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +53,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E2D740702156779E009B6E08 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E2D7406B2156779E009B6E08 /* ReactiveMapKit.framework in Embed Frameworks */,
+				E2D740672156779E009B6E08 /* Power.framework in Embed Frameworks */,
+				E2D7406F2156779E009B6E08 /* Result.framework in Embed Frameworks */,
+				E2D740692156779E009B6E08 /* ReactiveCocoa.framework in Embed Frameworks */,
+				E2D7406D2156779E009B6E08 /* ReactiveSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		E282050B21566F3100E0B220 /* ImgurBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImgurBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E282050E21566F3100E0B220 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +85,11 @@
 		E282052A21566F3200E0B220 /* ImgurBrowserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImgurBrowserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E282052E21566F3200E0B220 /* ImgurBrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurBrowserUITests.swift; sourceTree = "<group>"; };
 		E282053021566F3200E0B220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2D74052215676E9009B6E08 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
+		E2D74053215676E9009B6E08 /* ReactiveMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveMapKit.framework; path = Carthage/Build/iOS/ReactiveMapKit.framework; sourceTree = "<group>"; };
+		E2D74054215676E9009B6E08 /* Power.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Power.framework; path = Carthage/Build/iOS/Power.framework; sourceTree = "<group>"; };
+		E2D74055215676E9009B6E08 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		E2D74056215676E9009B6E08 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +97,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2D7405D215676E9009B6E08 /* Power.framework in Frameworks */,
+				E2D74057215676E9009B6E08 /* ReactiveSwift.framework in Frameworks */,
+				E2D7405A215676E9009B6E08 /* ReactiveMapKit.framework in Frameworks */,
+				E2D7406E2156779E009B6E08 /* Result.framework in Frameworks */,
+				E2D74063215676E9009B6E08 /* ReactiveCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +109,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2D7405E215676E9009B6E08 /* Power.framework in Frameworks */,
+				E2D74058215676E9009B6E08 /* ReactiveSwift.framework in Frameworks */,
+				E2D7405B215676E9009B6E08 /* ReactiveMapKit.framework in Frameworks */,
+				E2D74061215676E9009B6E08 /* Result.framework in Frameworks */,
+				E2D74064215676E9009B6E08 /* ReactiveCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +121,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2D7405F215676E9009B6E08 /* Power.framework in Frameworks */,
+				E2D74059215676E9009B6E08 /* ReactiveSwift.framework in Frameworks */,
+				E2D7405C215676E9009B6E08 /* ReactiveMapKit.framework in Frameworks */,
+				E2D74062215676E9009B6E08 /* Result.framework in Frameworks */,
+				E2D74065215676E9009B6E08 /* ReactiveCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +138,7 @@
 				E282050D21566F3100E0B220 /* Source */,
 				E282052221566F3200E0B220 /* Tests */,
 				E282052D21566F3200E0B220 /* UITests */,
+				E2D74051215676CF009B6E08 /* Frameworks */,
 				E282050C21566F3100E0B220 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,6 +184,18 @@
 			path = UITests;
 			sourceTree = "<group>";
 		};
+		E2D74051215676CF009B6E08 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2D74054215676E9009B6E08 /* Power.framework */,
+				E2D74056215676E9009B6E08 /* ReactiveCocoa.framework */,
+				E2D74053215676E9009B6E08 /* ReactiveMapKit.framework */,
+				E2D74052215676E9009B6E08 /* ReactiveSwift.framework */,
+				E2D74055215676E9009B6E08 /* Result.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -136,6 +207,8 @@
 				E282050721566F3100E0B220 /* Sources */,
 				E282050821566F3100E0B220 /* Frameworks */,
 				E282050921566F3100E0B220 /* Resources */,
+				E2D740702156779E009B6E08 /* Embed Frameworks */,
+				E2D7407221567864009B6E08 /* Carthage: Strip Symbols */,
 			);
 			buildRules = (
 			);
@@ -270,6 +343,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"error: SwiftLint not installed, run: brew install swiftlint\"\nfi\n";
+		};
+		E2D7407221567864009B6E08 /* Carthage: Strip Symbols */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Power.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveMapKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+			);
+			name = "Carthage: Strip Symbols";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -463,6 +559,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Source/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -480,6 +580,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Source/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -498,11 +602,16 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.s3ba.ImgurBrowserTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -518,11 +627,16 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.s3ba.ImgurBrowserTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -537,11 +651,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.s3ba.ImgurBrowserUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -556,11 +675,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.s3ba.ImgurBrowserUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
