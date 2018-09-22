@@ -132,6 +132,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E282053321566F3200E0B220 /* Build configuration list for PBXNativeTarget "ImgurBrowser" */;
 			buildPhases = (
+				E2D7404F21567110009B6E08 /* Swiftlint */,
 				E282050721566F3100E0B220 /* Sources */,
 				E282050821566F3100E0B220 /* Frameworks */,
 				E282050921566F3100E0B220 /* Resources */,
@@ -250,6 +251,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E2D7404F21567110009B6E08 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"error: SwiftLint not installed, run: brew install swiftlint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E282050721566F3100E0B220 /* Sources */ = {
