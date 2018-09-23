@@ -14,7 +14,9 @@ public class DefaultHomePresenter: HomePresenter {
     }
     
     public func viewDidLoad() {
-
+        if interactor.userLogged.value.isFalse {
+            wireframe.showLogin()
+        }
     }
 
     // MARK: - HomePresenter methods

@@ -7,3 +7,7 @@
 
 /* Home */
 "Home.Title" = "Inicio";
+
+/* Login */
+"Login.Alert.UserDeclineAccessTitle" = "Error";
+"Login.Alert.UserDeclineAccessBody" = "Si quieres continuar necesitas dar acceso a tu cuenta";

@@ -32,4 +32,12 @@ public class DependenciesiOS: SharedDependencies {
                                                   wireframe: rootWireframe)
         return vc
     }
+    
+    public func loginViewController() -> LoginViewController {
+        let vc = factory.createVC() as LoginViewController
+        vc.presenter = super.defaultLoginPresenter(view: vc,
+                                                   interactor: super.loginInteractor,
+                                                   wireframe: rootWireframe)
+        return vc
+    }
 }

@@ -24,17 +24,29 @@ public class SharedDependencies {
     public lazy var environmentController: EnvironmentController = {
         return DefaultEnvironmentController()
     }()
+    
+    public lazy var userController: UserController = {
+        return DefaultUserController()
+    }()
    
     // MARK: - Interactors
 
     public lazy var homeInteractor: HomeInteractor = {
-        return DefaultHomeInteractor()
+        return DefaultHomeInteractor(userController: userController)
+    }()
+    
+    public lazy var loginInteractor: LoginInteractor = {
+        return DefaultLoginInteractor(userController: userController, environmentController: environmentController)
     }()
     
     // MARK: - Default Presenters
     
     public func defaultHomePresenter(view: HomeView, interactor: HomeInteractor, wireframe: RootWireframe) -> DefaultHomePresenter {
         return DefaultHomePresenter(view: view, interactor: interactor, wireframe: wireframe)
+    }
+    
+    public func defaultLoginPresenter(view: LoginView, interactor: LoginInteractor, wireframe: RootWireframe) -> DefaultLoginPresenter {
+        return DefaultLoginPresenter(view: view, interactor: interactor, wireframe: wireframe)
     }
     
     // MARK: - Default Presenters

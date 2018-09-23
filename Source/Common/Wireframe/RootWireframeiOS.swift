@@ -27,6 +27,13 @@ public class RootWireframeiOS: RootWireframe {
         window.rootViewController = navController
     }
     
+    public func showLogin() {
+        let loginVC = dependencies.loginViewController()
+        let loginNav = ImgurBrowserNavigationController()
+        loginNav.viewControllers = [loginVC]
+        navController.present(loginNav, animated: true)
+    }
+    
     public func close() {
         exit(0)
     }

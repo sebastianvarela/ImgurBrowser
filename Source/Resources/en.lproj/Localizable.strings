@@ -7,3 +7,7 @@
 
 /* Home */
 "Home.Title" = "Home";
+
+/* Login */
+"Login.Alert.UserDeclineAccessTitle" = "Error";
+"Login.Alert.UserDeclineAccessBody" = "If you want to continue you need to give access to your account";
