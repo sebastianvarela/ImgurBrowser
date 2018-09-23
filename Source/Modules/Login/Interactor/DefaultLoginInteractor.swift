@@ -30,6 +30,7 @@ public class DefaultLoginInteractor: LoginInteractor {
             let params = URL.processQuery(query: urlAnchor)
             logTrace(params)
             //TODO: Process, by now assume its ok!
+            userController.userLogged.swap(User(name: "Fulanito"))
             loginObserver.send(value: .userCompleteLogin)
             return false
         }

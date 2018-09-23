@@ -11,15 +11,35 @@ public class DefaultHomePresenter: HomePresenter {
         self.view = view
         self.interactor = interactor
         self.wireframe = wireframe
+        
+        userLogged <~ interactor.userLogged
     }
     
     public func viewDidLoad() {
-        if interactor.userLogged.value.isFalse {
+        if interactor.userLogged.value.isNil {
             wireframe.showLogin()
         }
     }
 
     // MARK: - HomePresenter methods
 
+    public var userLogged = MutableProperty<User?>(nil)
+    
+    public func addPhoto() {
+        
+    }
+    
+    public func enableEditMode() {
+        
+    }
+    
+    public func logout() {
+        
+    }
+    
+    public func login() {
+        wireframe.showLogin()
+    }
+    
     // MARK: - Private methods
 }

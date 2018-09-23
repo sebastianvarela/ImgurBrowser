@@ -16,6 +16,10 @@ public class ImgurBrowserNavigationController: UINavigationController, UINavigat
     }
 
     public override var preferredStatusBarStyle: UIStatusBarStyle {
+        if viewControllers.last is HomeViewController {
+            return .lightContent
+        }
+        
         return .default
     }
     

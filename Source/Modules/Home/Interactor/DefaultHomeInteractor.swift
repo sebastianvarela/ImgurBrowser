@@ -13,7 +13,7 @@ public class DefaultHomeInteractor: HomeInteractor {
 
     // MARK: - HomeInteractor methods
 
-    public let userLogged = MutableProperty(false)
+    public let userLogged = MutableProperty<User?>(nil)
     
     // MARK: - Private methods
 }

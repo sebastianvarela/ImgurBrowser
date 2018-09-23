@@ -3,7 +3,7 @@ import ReactiveSwift
 import Result
 
 public protocol UserController {
-    var userLogged: MutableProperty<Bool> { get }
+    var userLogged: MutableProperty<User?> { get }
 }
 
 public class DefaultUserController: UserController {
@@ -14,7 +14,7 @@ public class DefaultUserController: UserController {
     
     // MARK: UserController methods
     
-    public var userLogged = MutableProperty(false)
+    public var userLogged = MutableProperty<User?>(nil)
     
     // MARK: Private methods
     

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E22219212157982F00E89C11 /* LoginEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22219202157982F00E89C11 /* LoginEvent.swift */; };
+		E2221925215827C300E89C11 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2221924215827C300E89C11 /* User.swift */; };
+		E2221927215827CB00E89C11 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2221926215827CB00E89C11 /* Photo.swift */; };
 		E282050F21566F3100E0B220 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E282050E21566F3100E0B220 /* AppDelegate.swift */; };
 		E282051621566F3200E0B220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E282051521566F3200E0B220 /* Assets.xcassets */; };
 		E282051921566F3200E0B220 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E282051721566F3200E0B220 /* LaunchScreen.storyboard */; };
@@ -63,7 +65,7 @@
 		E2D741022156C300009B6E08 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D740FD2156C300009B6E08 /* BaseCollectionViewCell.swift */; };
 		E2D741032156C300009B6E08 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D740FE2156C300009B6E08 /* BaseView.swift */; };
 		E2D741042156C300009B6E08 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D740FF2156C300009B6E08 /* BaseTableViewCell.swift */; };
-		E2D741072156C374009B6E08 /* WalletNavigationControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D741052156C374009B6E08 /* WalletNavigationControllerView.swift */; };
+		E2D741072156C374009B6E08 /* ImgurBrowserNavigationControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D741052156C374009B6E08 /* ImgurBrowserNavigationControllerView.swift */; };
 		E2D741082156C374009B6E08 /* ImgurBrowserNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D741062156C374009B6E08 /* ImgurBrowserNavigationController.swift */; };
 		E2D741152156C71E009B6E08 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D741122156C71D009B6E08 /* Kingfisher.framework */; };
 		E2D741182156C72C009B6E08 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D741142156C71D009B6E08 /* Cartography.framework */; };
@@ -139,6 +141,8 @@
 
 /* Begin PBXFileReference section */
 		E22219202157982F00E89C11 /* LoginEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEvent.swift; sourceTree = "<group>"; };
+		E2221924215827C300E89C11 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E2221926215827CB00E89C11 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		E282050B21566F3100E0B220 /* ImgurBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImgurBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E282050E21566F3100E0B220 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E282051521566F3200E0B220 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -184,7 +188,7 @@
 		E2D740FD2156C300009B6E08 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		E2D740FE2156C300009B6E08 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		E2D740FF2156C300009B6E08 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
-		E2D741052156C374009B6E08 /* WalletNavigationControllerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletNavigationControllerView.swift; sourceTree = "<group>"; };
+		E2D741052156C374009B6E08 /* ImgurBrowserNavigationControllerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgurBrowserNavigationControllerView.swift; sourceTree = "<group>"; };
 		E2D741062156C374009B6E08 /* ImgurBrowserNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgurBrowserNavigationController.swift; sourceTree = "<group>"; };
 		E2D741122156C71D009B6E08 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		E2D741132156C71D009B6E08 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
@@ -263,6 +267,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E2221922215827B300E89C11 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				E2221923215827BB00E89C11 /* Models */,
+				E2D7415F21576F82009B6E08 /* UserController.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		E2221923215827BB00E89C11 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E2221924215827C300E89C11 /* User.swift */,
+				E2221926215827CB00E89C11 /* Photo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		E282050221566F3100E0B220 = {
 			isa = PBXGroup;
 			children = (
@@ -431,7 +453,7 @@
 				E2D740FE2156C300009B6E08 /* BaseView.swift */,
 				E2D740FC2156C300009B6E08 /* BaseViewController.swift */,
 				E2D741062156C374009B6E08 /* ImgurBrowserNavigationController.swift */,
-				E2D741052156C374009B6E08 /* WalletNavigationControllerView.swift */,
+				E2D741052156C374009B6E08 /* ImgurBrowserNavigationControllerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -460,7 +482,7 @@
 			children = (
 				E2D741272156CADE009B6E08 /* VersionsController.swift */,
 				E2D741292156CAF1009B6E08 /* EnvironmentController.swift */,
-				E2D7415F21576F82009B6E08 /* UserController.swift */,
+				E2221922215827B300E89C11 /* User */,
 				E2D7416321576F98009B6E08 /* Network */,
 			);
 			path = Controllers;
@@ -793,6 +815,7 @@
 				E2D7415D2156F179009B6E08 /* TableCellFactory.swift in Sources */,
 				E2D7417721577C6D009B6E08 /* DefaultLoginPresenter.swift in Sources */,
 				E2D740D72156C0F7009B6E08 /* ProcessErrorAction.swift in Sources */,
+				E2221927215827CB00E89C11 /* Photo.swift in Sources */,
 				E2D741222156CA25009B6E08 /* PausableTimer.swift in Sources */,
 				E2D740D42156C0F7009B6E08 /* ProcessError.swift in Sources */,
 				E2D741042156C300009B6E08 /* BaseTableViewCell.swift in Sources */,
@@ -810,7 +833,7 @@
 				E2D7417321577C6D009B6E08 /* LoginViewController.swift in Sources */,
 				E282050F21566F3100E0B220 /* AppDelegate.swift in Sources */,
 				E2D740C62156C0F7009B6E08 /* RootWireframeiOS.swift in Sources */,
-				E2D741072156C374009B6E08 /* WalletNavigationControllerView.swift in Sources */,
+				E2D741072156C374009B6E08 /* ImgurBrowserNavigationControllerView.swift in Sources */,
 				E2D740752156BF2F009B6E08 /* Constants.swift in Sources */,
 				E2D7417421577C6D009B6E08 /* DefaultLoginInteractor.swift in Sources */,
 				E2D741022156C300009B6E08 /* BaseCollectionViewCell.swift in Sources */,
@@ -821,6 +844,7 @@
 				E2D7417621577C6D009B6E08 /* LoginView.swift in Sources */,
 				E2D741002156C300009B6E08 /* BaseTableHeaderView.swift in Sources */,
 				E2D740EC2156C2AA009B6E08 /* UIColorExtensions.swift in Sources */,
+				E2221925215827C300E89C11 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

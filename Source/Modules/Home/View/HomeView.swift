@@ -3,5 +3,4 @@ import ReactiveSwift
 import Result
 
 public protocol HomeView: View {
-
 }

@@ -152,7 +152,7 @@ public class BaseViewController<P: Presenter>: UIViewController, View, ImgurBrow
         SVProgressHUD.setDefaultStyle(.custom)
     }
 
-    // MARK: - WalletNavigationControllerView
+    // MARK: - ImgurBrowserNavigationControllerView
     
     public var navigationForegroundColor: UIColor {
         return .imgurBrowserGreenText

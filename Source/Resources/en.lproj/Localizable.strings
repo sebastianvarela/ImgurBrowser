@@ -9,5 +9,9 @@
 "Home.Title" = "Home";
 
 /* Login */
+"Login.LoginInfo" = "To see and edit your photos, please login";
+"Login.LoginButton" = "Login";
+"Login.UserInfoLabel" = "👋 {{USER}}";
+"Login.LogoutButton" = "Logout";
 "Login.Alert.UserDeclineAccessTitle" = "Error";
 "Login.Alert.UserDeclineAccessBody" = "If you want to continue you need to give access to your account";
