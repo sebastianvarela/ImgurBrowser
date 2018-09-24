@@ -4,7 +4,6 @@ import Power
 public protocol EnvironmentController {
     var endpoint: URL { get }
     var authorizationUrl: URL { get }
-    var apiBase: URL { get }
 }
 
 public class DefaultEnvironmentController: EnvironmentController {
@@ -33,9 +32,5 @@ public class DefaultEnvironmentController: EnvironmentController {
             fatalError("Bad URL components")
         }
         return url
-    }
-    
-    public var apiBase: URL {
-        return endpoint.appendingPathComponent("/3/")
     }
 }

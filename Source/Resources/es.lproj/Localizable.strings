@@ -15,3 +15,5 @@
 "Login.LogoutButton" = "Salir";
 "Login.Alert.UserDeclineAccessTitle" = "Error";
 "Login.Alert.UserDeclineAccessBody" = "Si quieres continuar necesitas dar acceso a tu cuenta";
+"Login.Alert.CallbackErrorTitle" = "Error";
+"Login.Alert.CallbackErrorBody" = "Ha ocurrido un error, por favor inténtalo de nuevo más tarde";

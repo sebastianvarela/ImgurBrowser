@@ -34,7 +34,7 @@ public class DefaultHomePresenter: HomePresenter {
     }
     
     public func logout() {
-        
+        interactor.logout()
     }
     
     public func login() {

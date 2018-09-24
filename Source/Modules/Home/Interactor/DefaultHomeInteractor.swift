@@ -15,5 +15,9 @@ public class DefaultHomeInteractor: HomeInteractor {
 
     public let userLogged = MutableProperty<User?>(nil)
     
+    public func logout() {
+        userController.logout()
+    }
+    
     // MARK: - Private methods
 }

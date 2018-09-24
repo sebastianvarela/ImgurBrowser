@@ -15,6 +15,11 @@
 		E282051921566F3200E0B220 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E282051721566F3200E0B220 /* LaunchScreen.storyboard */; };
 		E282052421566F3200E0B220 /* ImgurBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E282052321566F3200E0B220 /* ImgurBrowserTests.swift */; };
 		E282052F21566F3200E0B220 /* ImgurBrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E282052E21566F3200E0B220 /* ImgurBrowserUITests.swift */; };
+		E28B4132215956B90060E626 /* NetworkToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28B4131215956B90060E626 /* NetworkToken.swift */; };
+		E28B4134215959D70060E626 /* NetworkTokenTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28B4133215959D70060E626 /* NetworkTokenTask.swift */; };
+		E28B413621595BB20060E626 /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28B413521595BB20060E626 /* NetworkMethod.swift */; };
+		E28B413821595D980060E626 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28B413721595D980060E626 /* NetworkError.swift */; };
+		E28B4146215979A30060E626 /* NetworkContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28B4145215979A30060E626 /* NetworkContentType.swift */; };
 		E2D74057215676E9009B6E08 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74052215676E9009B6E08 /* ReactiveSwift.framework */; };
 		E2D74058215676E9009B6E08 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74052215676E9009B6E08 /* ReactiveSwift.framework */; };
 		E2D74059215676E9009B6E08 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74052215676E9009B6E08 /* ReactiveSwift.framework */; };
@@ -90,7 +95,7 @@
 		E2D7415E2156F179009B6E08 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7415B2156F179009B6E08 /* Factory.swift */; };
 		E2D7416021576F82009B6E08 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7415F21576F82009B6E08 /* UserController.swift */; };
 		E2D7416221576F90009B6E08 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7416121576F90009B6E08 /* NetworkController.swift */; };
-		E2D7416621576FB1009B6E08 /* NetworkTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7416521576FB1009B6E08 /* NetworkTasks.swift */; };
+		E2D7416621576FB1009B6E08 /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7416521576FB1009B6E08 /* NetworkTask.swift */; };
 		E2D7417121577C6D009B6E08 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7416A21577C6D009B6E08 /* LoginPresenter.swift */; };
 		E2D7417221577C6D009B6E08 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2D7416B21577C6D009B6E08 /* LoginViewController.storyboard */; };
 		E2D7417321577C6D009B6E08 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7416C21577C6D009B6E08 /* LoginViewController.swift */; };
@@ -153,6 +158,11 @@
 		E282052A21566F3200E0B220 /* ImgurBrowserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImgurBrowserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E282052E21566F3200E0B220 /* ImgurBrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurBrowserUITests.swift; sourceTree = "<group>"; };
 		E282053021566F3200E0B220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E28B4131215956B90060E626 /* NetworkToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkToken.swift; sourceTree = "<group>"; };
+		E28B4133215959D70060E626 /* NetworkTokenTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTokenTask.swift; sourceTree = "<group>"; };
+		E28B413521595BB20060E626 /* NetworkMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
+		E28B413721595D980060E626 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		E28B4145215979A30060E626 /* NetworkContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkContentType.swift; sourceTree = "<group>"; };
 		E2D74052215676E9009B6E08 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		E2D74053215676E9009B6E08 /* ReactiveMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveMapKit.framework; path = Carthage/Build/iOS/ReactiveMapKit.framework; sourceTree = "<group>"; };
 		E2D74054215676E9009B6E08 /* Power.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Power.framework; path = Carthage/Build/iOS/Power.framework; sourceTree = "<group>"; };
@@ -213,7 +223,7 @@
 		E2D7415B2156F179009B6E08 /* Factory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		E2D7415F21576F82009B6E08 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		E2D7416121576F90009B6E08 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
-		E2D7416521576FB1009B6E08 /* NetworkTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTasks.swift; sourceTree = "<group>"; };
+		E2D7416521576FB1009B6E08 /* NetworkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
 		E2D7416A21577C6D009B6E08 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		E2D7416B21577C6D009B6E08 /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
 		E2D7416C21577C6D009B6E08 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -335,6 +345,13 @@
 				E282053021566F3200E0B220 /* Info.plist */,
 			);
 			path = UITests;
+			sourceTree = "<group>";
+		};
+		E28B41302159565F0060E626 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E2D74051215676CF009B6E08 /* Frameworks */ = {
@@ -540,9 +557,13 @@
 		E2D7416321576F98009B6E08 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				E28B41302159565F0060E626 /* Models */,
 				E2D7416421576FA3009B6E08 /* Tasks */,
 				E2D7416121576F90009B6E08 /* NetworkController.swift */,
-				E2D7416521576FB1009B6E08 /* NetworkTasks.swift */,
+				E2D7416521576FB1009B6E08 /* NetworkTask.swift */,
+				E28B413521595BB20060E626 /* NetworkMethod.swift */,
+				E28B413721595D980060E626 /* NetworkError.swift */,
+				E28B4145215979A30060E626 /* NetworkContentType.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -550,6 +571,8 @@
 		E2D7416421576FA3009B6E08 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				E28B4133215959D70060E626 /* NetworkTokenTask.swift */,
+				E28B4131215956B90060E626 /* NetworkToken.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -792,11 +815,13 @@
 				E2D740F42156C2AA009B6E08 /* AlertView.swift in Sources */,
 				E2D741352156E727009B6E08 /* DefaultHomeInteractor.swift in Sources */,
 				E2D7416021576F82009B6E08 /* UserController.swift in Sources */,
+				E28B413821595D980060E626 /* NetworkError.swift in Sources */,
 				E2D741032156C300009B6E08 /* BaseView.swift in Sources */,
 				E2D740D02156C0F7009B6E08 /* View.swift in Sources */,
 				E2D7415C2156F179009B6E08 /* CollectionCellFactory.swift in Sources */,
 				E2D740D92156C0F7009B6E08 /* SharedDependencies.swift in Sources */,
 				E2D740F02156C2AA009B6E08 /* ToastAlertPresentationController.swift in Sources */,
+				E28B4132215956B90060E626 /* NetworkToken.swift in Sources */,
 				E2D741342156E727009B6E08 /* HomeViewController.swift in Sources */,
 				E2D7412A2156CAF1009B6E08 /* EnvironmentController.swift in Sources */,
 				E2D740C42156C0F7009B6E08 /* RootWireframe.swift in Sources */,
@@ -819,12 +844,13 @@
 				E2D741222156CA25009B6E08 /* PausableTimer.swift in Sources */,
 				E2D740D42156C0F7009B6E08 /* ProcessError.swift in Sources */,
 				E2D741042156C300009B6E08 /* BaseTableViewCell.swift in Sources */,
-				E2D7416621576FB1009B6E08 /* NetworkTasks.swift in Sources */,
+				E2D7416621576FB1009B6E08 /* NetworkTask.swift in Sources */,
 				E2D740D62156C0F7009B6E08 /* Presenter.swift in Sources */,
 				E2D741082156C374009B6E08 /* ImgurBrowserNavigationController.swift in Sources */,
 				E2D741382156E727009B6E08 /* DefaultHomePresenter.swift in Sources */,
 				E2D741372156E727009B6E08 /* HomeView.swift in Sources */,
 				E2D7417D21578262009B6E08 /* RequestingAuthorizationUrlError.swift in Sources */,
+				E28B4134215959D70060E626 /* NetworkTokenTask.swift in Sources */,
 				E2D740D52156C0F7009B6E08 /* Interactor.swift in Sources */,
 				E22219212157982F00E89C11 /* LoginEvent.swift in Sources */,
 				E2D7417521577C6D009B6E08 /* LoginInteractor.swift in Sources */,
@@ -832,6 +858,7 @@
 				E2D740D32156C0F7009B6E08 /* ViewModel.swift in Sources */,
 				E2D7417321577C6D009B6E08 /* LoginViewController.swift in Sources */,
 				E282050F21566F3100E0B220 /* AppDelegate.swift in Sources */,
+				E28B413621595BB20060E626 /* NetworkMethod.swift in Sources */,
 				E2D740C62156C0F7009B6E08 /* RootWireframeiOS.swift in Sources */,
 				E2D741072156C374009B6E08 /* ImgurBrowserNavigationControllerView.swift in Sources */,
 				E2D740752156BF2F009B6E08 /* Constants.swift in Sources */,
@@ -842,6 +869,7 @@
 				E2D741282156CADE009B6E08 /* VersionsController.swift in Sources */,
 				E2D741362156E727009B6E08 /* HomeInteractor.swift in Sources */,
 				E2D7417621577C6D009B6E08 /* LoginView.swift in Sources */,
+				E28B4146215979A30060E626 /* NetworkContentType.swift in Sources */,
 				E2D741002156C300009B6E08 /* BaseTableHeaderView.swift in Sources */,
 				E2D740EC2156C2AA009B6E08 /* UIColorExtensions.swift in Sources */,
 				E2221925215827C300E89C11 /* User.swift in Sources */,

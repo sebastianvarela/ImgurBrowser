@@ -40,8 +40,8 @@ public class HomeViewController: BaseViewController<DefaultHomePresenter>, HomeV
         
         navigationItem.leftBarButtonItem = editBarButton
         navigationItem.rightBarButtonItem = logoutBarButton
-        logoutBarButtonAction.onCompletedAction(presenter.enableEditMode)
-        editButtonAction.onCompletedAction(presenter.logout)
+        editButtonAction.onCompletedAction(presenter.enableEditMode)
+        logoutBarButtonAction.onCompletedAction(presenter.logout)
     }
 
     // MARK: - HomeView methods

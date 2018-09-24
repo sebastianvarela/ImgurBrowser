@@ -57,6 +57,11 @@ public class DefaultLoginPresenter: LoginPresenter {
         switch event {
         case .userCompleteLogin:
             view?.dismiss(animated: true)
+        case .invalidCallback:
+            view?.presentAlert(title: NSLocalizedString("Login.Alert.CallbackErrorTitle"),
+                               subTitle: NSLocalizedString("Login.Alert.CallbackErrorBody")) {
+                                self.view?.dismiss(animated: true)
+            }
         case .userDeclineAccess:
             view?.presentAlert(title: NSLocalizedString("Login.Alert.UserDeclineAccessTitle"),
                                subTitle: NSLocalizedString("Login.Alert.UserDeclineAccessBody")) {

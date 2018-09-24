@@ -26,7 +26,11 @@ public class SharedDependencies {
     }()
     
     public lazy var userController: UserController = {
-        return DefaultUserController()
+        return DefaultUserController(networkController: networkController)
+    }()
+    
+    public lazy var networkController: NetworkController = {
+        return DefaultNetworkController(environmentController: environmentController)
     }()
    
     // MARK: - Interactors

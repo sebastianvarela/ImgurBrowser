@@ -27,11 +27,15 @@ public class DefaultLoginInteractor: LoginInteractor {
         }
         if url.starts(with: callbackUrl), let urlAnchor = url.anchor {
             logTrace("Processing callback URL 👀")
-            let params = URL.processQuery(query: urlAnchor)
-            logTrace(params)
-            //TODO: Process, by now assume its ok!
-            userController.userLogged.swap(User(name: "Fulanito"))
-            loginObserver.send(value: .userCompleteLogin)
+            userController.validateOauth(params: urlAnchor)
+                .startWithValues { valid in
+                    if valid {
+                        self.loginObserver.send(value: .userCompleteLogin)
+                    } else {
+                        logWarning("Invalid callback params: \(urlAnchor)")
+                        self.loginObserver.send(value: .invalidCallback)
+                    }
+                }
             return false
         }
         if url.starts(with: callbackUrl), url.query == "error=access_denied" {

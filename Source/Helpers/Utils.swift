@@ -1,6 +1,8 @@
 import CoreGraphics
 import Foundation
 
+public typealias JSON = [String: Any]
+
 public func NSLocalizedString(_ key: String) -> String {
     return NSLocalizedString(key, comment: "")
 }

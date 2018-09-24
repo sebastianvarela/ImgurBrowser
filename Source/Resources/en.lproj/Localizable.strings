@@ -15,3 +15,5 @@
 "Login.LogoutButton" = "Logout";
 "Login.Alert.UserDeclineAccessTitle" = "Error";
 "Login.Alert.UserDeclineAccessBody" = "If you want to continue you need to give access to your account";
+"Login.Alert.CallbackErrorTitle" = "Error";
+"Login.Alert.CallbackErrorBody" = "There has been an error processing the request. Please, try again later.";
