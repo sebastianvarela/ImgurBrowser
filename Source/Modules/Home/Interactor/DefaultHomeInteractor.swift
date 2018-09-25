@@ -4,9 +4,11 @@ import Result
 
 public class DefaultHomeInteractor: HomeInteractor {
     private let userController: UserController
+    private let imageController: ImageController
     
-    public init(userController: UserController) {
+    public init(userController: UserController, imageController: ImageController) {
         self.userController = userController
+        self.imageController = imageController
         
         userLogged <~ userController.userLogged
 	}

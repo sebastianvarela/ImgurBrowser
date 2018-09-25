@@ -29,6 +29,10 @@ public class SharedDependencies {
         return DefaultUserController(networkController: networkController, keychainWrapper: keychainWrapper)
     }()
     
+    public lazy var imageController: ImageController = {
+        return DefaultImageController(userController: userController, networkController: networkController)
+    }()
+    
     public lazy var networkController: NetworkController = {
         return DefaultNetworkController(environmentController: environmentController)
     }()
@@ -36,7 +40,7 @@ public class SharedDependencies {
     // MARK: - Interactors
 
     public lazy var homeInteractor: HomeInteractor = {
-        return DefaultHomeInteractor(userController: userController)
+        return DefaultHomeInteractor(userController: userController, imageController: imageController)
     }()
     
     public lazy var loginInteractor: LoginInteractor = {

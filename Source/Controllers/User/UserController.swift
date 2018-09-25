@@ -63,7 +63,6 @@ public class DefaultUserController: UserController {
             let user = try? JSONDecoder().decode(User.self, from: userData) else {
                 return
         }
-        userLogged.swap(user)
         
         // REQUEST NEW ACCESS_TOKEN
         let tokenTask = NetworkTokenTask(refreshToken: user.refreshToken)
@@ -82,9 +81,9 @@ public class DefaultUserController: UserController {
     }
     
     private func processToken(token: NetworkToken) {
+        self.networkController.accessToken.swap(token.accessToken)
         let user = User(id: token.accountId, username: token.accountUsername, refreshToken: token.refreshToken)
         self.userLogged.swap(user)
-        self.networkController.accessToken.swap(token.accessToken)
         
         if let userData = try? JSONEncoder().encode(user) {
             self.keychainWrapper.save(userData, inService: .keychainService, andAccount: .keychainUser)

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		E22219212157982F00E89C11 /* LoginEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22219202157982F00E89C11 /* LoginEvent.swift */; };
 		E2221925215827C300E89C11 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2221924215827C300E89C11 /* User.swift */; };
-		E2221927215827CB00E89C11 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2221926215827CB00E89C11 /* Photo.swift */; };
+		E2221927215827CB00E89C11 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2221926215827CB00E89C11 /* Image.swift */; };
 		E282050F21566F3100E0B220 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E282050E21566F3100E0B220 /* AppDelegate.swift */; };
 		E282051621566F3200E0B220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E282051521566F3200E0B220 /* Assets.xcassets */; };
 		E282051921566F3200E0B220 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E282051721566F3200E0B220 /* LaunchScreen.storyboard */; };
@@ -21,6 +21,9 @@
 		E28B413821595D980060E626 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28B413721595D980060E626 /* NetworkError.swift */; };
 		E28B4146215979A30060E626 /* NetworkContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28B4145215979A30060E626 /* NetworkContentType.swift */; };
 		E2952BEB215AA7CB00D1CA72 /* NetworkTokenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2952BEA215AA7CB00D1CA72 /* NetworkTokenTests.swift */; };
+		E2952BED215AD25100D1CA72 /* RetrieveImagesTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2952BEC215AD25100D1CA72 /* RetrieveImagesTask.swift */; };
+		E2952BEF215AD32D00D1CA72 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2952BEE215AD32D00D1CA72 /* ImageController.swift */; };
+		E2952BF1215AD8E300D1CA72 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2952BF0215AD8E300D1CA72 /* Response.swift */; };
 		E2D74057215676E9009B6E08 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74052215676E9009B6E08 /* ReactiveSwift.framework */; };
 		E2D74058215676E9009B6E08 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74052215676E9009B6E08 /* ReactiveSwift.framework */; };
 		E2D74059215676E9009B6E08 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74052215676E9009B6E08 /* ReactiveSwift.framework */; };
@@ -148,7 +151,7 @@
 /* Begin PBXFileReference section */
 		E22219202157982F00E89C11 /* LoginEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEvent.swift; sourceTree = "<group>"; };
 		E2221924215827C300E89C11 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		E2221926215827CB00E89C11 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		E2221926215827CB00E89C11 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		E282050B21566F3100E0B220 /* ImgurBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImgurBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E282050E21566F3100E0B220 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E282051521566F3200E0B220 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -165,6 +168,9 @@
 		E28B413721595D980060E626 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		E28B4145215979A30060E626 /* NetworkContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkContentType.swift; sourceTree = "<group>"; };
 		E2952BEA215AA7CB00D1CA72 /* NetworkTokenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTokenTests.swift; sourceTree = "<group>"; };
+		E2952BEC215AD25100D1CA72 /* RetrieveImagesTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveImagesTask.swift; sourceTree = "<group>"; };
+		E2952BEE215AD32D00D1CA72 /* ImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
+		E2952BF0215AD8E300D1CA72 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		E2D74052215676E9009B6E08 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		E2D74053215676E9009B6E08 /* ReactiveMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveMapKit.framework; path = Carthage/Build/iOS/ReactiveMapKit.framework; sourceTree = "<group>"; };
 		E2D74054215676E9009B6E08 /* Power.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Power.framework; path = Carthage/Build/iOS/Power.framework; sourceTree = "<group>"; };
@@ -284,6 +290,7 @@
 			children = (
 				E2221923215827BB00E89C11 /* Models */,
 				E2D7415F21576F82009B6E08 /* UserController.swift */,
+				E2952BEE215AD32D00D1CA72 /* ImageController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -292,7 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				E2221924215827C300E89C11 /* User.swift */,
-				E2221926215827CB00E89C11 /* Photo.swift */,
+				E2221926215827CB00E89C11 /* Image.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -353,6 +360,8 @@
 		E28B41302159565F0060E626 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E28B4131215956B90060E626 /* NetworkToken.swift */,
+				E2952BF0215AD8E300D1CA72 /* Response.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -583,7 +592,7 @@
 			isa = PBXGroup;
 			children = (
 				E28B4133215959D70060E626 /* NetworkTokenTask.swift */,
-				E28B4131215956B90060E626 /* NetworkToken.swift */,
+				E2952BEC215AD25100D1CA72 /* RetrieveImagesTask.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -851,20 +860,23 @@
 				E2D7415D2156F179009B6E08 /* TableCellFactory.swift in Sources */,
 				E2D7417721577C6D009B6E08 /* DefaultLoginPresenter.swift in Sources */,
 				E2D740D72156C0F7009B6E08 /* ProcessErrorAction.swift in Sources */,
-				E2221927215827CB00E89C11 /* Photo.swift in Sources */,
+				E2221927215827CB00E89C11 /* Image.swift in Sources */,
 				E2D741222156CA25009B6E08 /* PausableTimer.swift in Sources */,
 				E2D740D42156C0F7009B6E08 /* ProcessError.swift in Sources */,
 				E2D741042156C300009B6E08 /* BaseTableViewCell.swift in Sources */,
+				E2952BED215AD25100D1CA72 /* RetrieveImagesTask.swift in Sources */,
 				E2D7416621576FB1009B6E08 /* NetworkTask.swift in Sources */,
 				E2D740D62156C0F7009B6E08 /* Presenter.swift in Sources */,
 				E2D741082156C374009B6E08 /* ImgurBrowserNavigationController.swift in Sources */,
 				E2D741382156E727009B6E08 /* DefaultHomePresenter.swift in Sources */,
 				E2D741372156E727009B6E08 /* HomeView.swift in Sources */,
+				E2952BF1215AD8E300D1CA72 /* Response.swift in Sources */,
 				E2D7417D21578262009B6E08 /* RequestingAuthorizationUrlError.swift in Sources */,
 				E28B4134215959D70060E626 /* NetworkTokenTask.swift in Sources */,
 				E2D740D52156C0F7009B6E08 /* Interactor.swift in Sources */,
 				E22219212157982F00E89C11 /* LoginEvent.swift in Sources */,
 				E2D7417521577C6D009B6E08 /* LoginInteractor.swift in Sources */,
+				E2952BEF215AD32D00D1CA72 /* ImageController.swift in Sources */,
 				E2D740EF2156C2AA009B6E08 /* ToastRemoveType.swift in Sources */,
 				E2D740D32156C0F7009B6E08 /* ViewModel.swift in Sources */,
 				E2D7417321577C6D009B6E08 /* LoginViewController.swift in Sources */,

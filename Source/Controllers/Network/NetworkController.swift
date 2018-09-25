@@ -24,22 +24,23 @@ public class DefaultNetworkController: NetworkController {
     public var accessToken = MutableProperty<String?>(nil)
     
     public func execute<O, T: NetworkTask>(task: T) -> SignalProducer<O, NetworkError> where T.OutputType == O {
-        let url = environmentController.endpoint.appendingPathComponent(task.path)
-        var urlRequest = URLRequest(url: url)
-        if let body = task.contentType.body {
-            urlRequest.setValue(task.contentType.httpHeaderValue, forHTTPHeaderField: "Content-Type")
-            urlRequest.httpBody = body
-        }
-        urlRequest.httpMethod = task.method.rawValue
-        if task.needAuth {
-            if let token = accessToken.value {
-                urlRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-            } else {
-                return SignalProducer(error: .tokenMissing)
-            }
-        }
-
         return SignalProducer { observer, lifetime in
+            let url = self.environmentController.endpoint.appendingPathComponent(task.path)
+            var urlRequest = URLRequest(url: url)
+            if let body = task.contentType.body {
+                urlRequest.setValue(task.contentType.httpHeaderValue, forHTTPHeaderField: "Content-Type")
+                urlRequest.httpBody = body
+            }
+            urlRequest.httpMethod = task.method.rawValue
+            if task.needAuth {
+                if let token = self.accessToken.value {
+                    urlRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+                } else {
+                    observer.send(error: .tokenMissing)
+                    return
+                }
+            }
+
             lifetime += self.session.reactive
                 .data(with: urlRequest)
                 .start(on: self.queue)
