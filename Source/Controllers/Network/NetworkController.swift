@@ -5,7 +5,8 @@ import Result
 
 public protocol NetworkController {
     var connecting: MutableProperty<Bool> { get }
-
+    var accessToken: MutableProperty<String?> { get }
+    
     func execute<O, T: NetworkTask>(task: T) -> SignalProducer<O, NetworkError> where T.OutputType == O
 }
 
@@ -20,6 +21,7 @@ public class DefaultNetworkController: NetworkController {
     }
     
     public let connecting = MutableProperty(false)
+    public var accessToken = MutableProperty<String?>(nil)
     
     public func execute<O, T: NetworkTask>(task: T) -> SignalProducer<O, NetworkError> where T.OutputType == O {
         let url = environmentController.endpoint.appendingPathComponent(task.path)
@@ -29,7 +31,13 @@ public class DefaultNetworkController: NetworkController {
             urlRequest.httpBody = body
         }
         urlRequest.httpMethod = task.method.rawValue
-//        urlRequest.addValue("Bearer \(String(describing: token))", forHTTPHeaderField: "Authorization")
+        if task.needAuth {
+            if let token = accessToken.value {
+                urlRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            } else {
+                return SignalProducer(error: .tokenMissing)
+            }
+        }
 
         return SignalProducer { observer, lifetime in
             lifetime += self.session.reactive

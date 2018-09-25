@@ -1,6 +1,7 @@
 import Foundation
 
-public struct User: ViewModel {
+public struct User: Codable, ViewModel {
     public let id: Int
-    public let name: String
+    public let username: String
+    public let refreshToken: String
 }

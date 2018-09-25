@@ -20,6 +20,7 @@
 		E28B413621595BB20060E626 /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28B413521595BB20060E626 /* NetworkMethod.swift */; };
 		E28B413821595D980060E626 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28B413721595D980060E626 /* NetworkError.swift */; };
 		E28B4146215979A30060E626 /* NetworkContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28B4145215979A30060E626 /* NetworkContentType.swift */; };
+		E2952BEB215AA7CB00D1CA72 /* NetworkTokenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2952BEA215AA7CB00D1CA72 /* NetworkTokenTests.swift */; };
 		E2D74057215676E9009B6E08 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74052215676E9009B6E08 /* ReactiveSwift.framework */; };
 		E2D74058215676E9009B6E08 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74052215676E9009B6E08 /* ReactiveSwift.framework */; };
 		E2D74059215676E9009B6E08 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74052215676E9009B6E08 /* ReactiveSwift.framework */; };
@@ -163,6 +164,7 @@
 		E28B413521595BB20060E626 /* NetworkMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
 		E28B413721595D980060E626 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		E28B4145215979A30060E626 /* NetworkContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkContentType.swift; sourceTree = "<group>"; };
+		E2952BEA215AA7CB00D1CA72 /* NetworkTokenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTokenTests.swift; sourceTree = "<group>"; };
 		E2D74052215676E9009B6E08 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		E2D74053215676E9009B6E08 /* ReactiveMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveMapKit.framework; path = Carthage/Build/iOS/ReactiveMapKit.framework; sourceTree = "<group>"; };
 		E2D74054215676E9009B6E08 /* Power.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Power.framework; path = Carthage/Build/iOS/Power.framework; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 		E282052221566F3200E0B220 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				E2952BE9215AA7AE00D1CA72 /* Unit */,
 				E282052321566F3200E0B220 /* ImgurBrowserTests.swift */,
 				E282052521566F3200E0B220 /* Info.plist */,
 			);
@@ -352,6 +355,14 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E2952BE9215AA7AE00D1CA72 /* Unit */ = {
+			isa = PBXGroup;
+			children = (
+				E2952BEA215AA7CB00D1CA72 /* NetworkTokenTests.swift */,
+			);
+			path = Unit;
 			sourceTree = "<group>";
 		};
 		E2D74051215676CF009B6E08 /* Frameworks */ = {
@@ -881,6 +892,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E282052421566F3200E0B220 /* ImgurBrowserTests.swift in Sources */,
+				E2952BEB215AA7CB00D1CA72 /* NetworkTokenTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

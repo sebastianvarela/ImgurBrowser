@@ -9,6 +9,10 @@ public extension ConstantKey {
     public static let ImgurClientSecret = ConstantKey("c5f0c21ef6222764d0b90a260a4cf6b799179501")
     public static let ImgurOauth2CallbackUrl = ConstantKey("https://s3ba.net/oauth/callback")
     
+    // KEYCHAIN:
+    public static let keychainService = ConstantKey("net.s3ba")
+    public static let keychainUser = ConstantKey("user")
+    
     // USER DEFAULTS:
-    public static let userDefaultsNamespace = ConstantKey("com.s3ba")
+    public static let userDefaultsNamespace = ConstantKey("net.s3ba")
 }

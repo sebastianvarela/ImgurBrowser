@@ -50,7 +50,7 @@ public class HomeViewController: BaseViewController<DefaultHomePresenter>, HomeV
     
     private func mapGreeting(user: User?) -> String {
         if let user = user {
-            return NSLocalizedString("Login.UserInfoLabel").replacingOccurrences(of: "{{USER}}", with: user.name)
+            return NSLocalizedString("Login.UserInfoLabel").replacingOccurrences(of: "{{USER}}", with: user.username)
         }
         return ""
     }

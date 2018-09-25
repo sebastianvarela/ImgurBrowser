@@ -47,36 +47,36 @@ public enum NetworkContentType {
     }
 }
 
-struct MultiPartForm {
-    let form: [String: String]
-    let boundary: String
+public struct MultiPartForm {
+    private let form: [String: String]
+    private let boundary: String
     
-    init(form: [String: String], boundary: String) {
+    public init(form: [String: String], boundary: String) {
         self.form = form
         self.boundary = boundary
     }
     
-    var body: Data {
-        
+    public var body: Data {
         var body = Data()
         
         let boundaryPrefix = "--\(boundary)\r\n"
         
         for (key, value) in form {
-            body.appendString(boundaryPrefix)
-            body.appendString("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
-            body.appendString("\(value)\r\n")
+            body.append(string: boundaryPrefix)
+            body.append(string: "Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
+            body.append(string: "\(value)\r\n")
         }
         
-        body.appendString("--".appending(boundary.appending("--")))
+        body.append(string: "--".appending(boundary.appending("--")))
         
         return body
     }
 }
 
-extension Data {
-    mutating func appendString(_ string: String) {
-        let data = string.data(using: String.Encoding.utf8, allowLossyConversion: false)
-        append(data!)
+public extension Data {
+    public mutating func append(string: String) {
+        if let data = string.data(using: String.Encoding.utf8, allowLossyConversion: false) {
+            append(data)
+        }
     }
 }

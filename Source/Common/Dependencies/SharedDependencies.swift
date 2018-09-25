@@ -26,7 +26,7 @@ public class SharedDependencies {
     }()
     
     public lazy var userController: UserController = {
-        return DefaultUserController(networkController: networkController)
+        return DefaultUserController(networkController: networkController, keychainWrapper: keychainWrapper)
     }()
     
     public lazy var networkController: NetworkController = {

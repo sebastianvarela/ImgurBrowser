@@ -12,10 +12,14 @@ public protocol UserController {
 
 public class DefaultUserController: UserController {
     private let networkController: NetworkController
+    private let keychainWrapper: KeychainWrapper
     private let queue = QueueScheduler(targeting: DispatchQueue(label: "net.s3ba.ImgurBrowser.UserController", qos: .userInitiated))
 
-    public init(networkController: NetworkController) {
+    public init(networkController: NetworkController, keychainWrapper: KeychainWrapper) {
         self.networkController = networkController
+        self.keychainWrapper = keychainWrapper
+        
+        reloadUserFromKeychain()
     }
     
     // MARK: UserController methods
@@ -29,12 +33,10 @@ public class DefaultUserController: UserController {
             return SignalProducer(value: false)
         }
         
-        let task = NetworkTokenTask(refreshToken: refreshToken,
-                                    clientId: ConstantKey.ImgurClientId.rawValue,
-                                    clientSecret: ConstantKey.ImgurClientSecret.rawValue)
+        let tokenTask = NetworkTokenTask(refreshToken: refreshToken)
         
         return SignalProducer { observer, lifetime in
-            lifetime += self.networkController.execute(task: task)
+            lifetime += self.networkController.execute(task: tokenTask)
                 .start(on: self.queue)
                 .startWithResult { result in
                     switch result {
@@ -42,8 +44,7 @@ public class DefaultUserController: UserController {
                         logError("Could not validate OAuth2: \(error)")
                         observer.send(value: false)
                     case .success(let token):
-                        let user = User(id: token.account_id, name: token.account_username)
-                        self.userLogged.swap(user)
+                        self.processToken(token: token)
                         observer.send(value: true)
                     }
                 }
@@ -52,8 +53,41 @@ public class DefaultUserController: UserController {
     
     public func logout() {
         userLogged.swap(nil)
+        keychainWrapper.delete(service: .keychainService, account: .keychainUser)
     }
     
     // MARK: Private methods
+ 
+    private func reloadUserFromKeychain() {
+        guard let userData = keychainWrapper.read(dataFromService: .keychainService, andAccount: .keychainUser),
+            let user = try? JSONDecoder().decode(User.self, from: userData) else {
+                return
+        }
+        userLogged.swap(user)
+        
+        // REQUEST NEW ACCESS_TOKEN
+        let tokenTask = NetworkTokenTask(refreshToken: user.refreshToken)
+        networkController.execute(task: tokenTask)
+            .start(on: queue)
+            .startWithResult { result in
+                switch result {
+                case .failure(let error):
+                    logError("Could not request access-token. ▶️ Error: \(error)")
+                    self.logout()
+                    
+                case .success(let token):
+                    self.processToken(token: token)
+                }
+            }
+    }
     
+    private func processToken(token: NetworkToken) {
+        let user = User(id: token.accountId, username: token.accountUsername, refreshToken: token.refreshToken)
+        self.userLogged.swap(user)
+        self.networkController.accessToken.swap(token.accessToken)
+        
+        if let userData = try? JSONEncoder().encode(user) {
+            self.keychainWrapper.save(userData, inService: .keychainService, andAccount: .keychainUser)
+        }
+    }
 }
