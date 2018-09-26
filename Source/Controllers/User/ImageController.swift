@@ -5,6 +5,8 @@ import Result
 
 public protocol ImageController {
     var images: MutableProperty<[Image]> { get }
+    
+    func fetchImages() -> SignalProducer<Void, FetchImagesError>
 }
 
 public class DefaultImageController: ImageController {
@@ -25,6 +27,18 @@ public class DefaultImageController: ImageController {
     // MARK: ImageController methods
     
     public let images = MutableProperty([Image]())
+    
+    public func fetchImages() -> SignalProducer<Void, FetchImagesError> {
+        return SignalProducer { observer, lifetime in
+            let task = RetrieveImagesTask(page: 0)
+            
+            lifetime += self.networkController.execute(task: task)
+                .mapError(FetchImagesError.map)
+                .mapToVoid()
+                .start(on: self.queue)
+                .start(observer)
+        }
+    }
     
     // MARK: Private methods
     

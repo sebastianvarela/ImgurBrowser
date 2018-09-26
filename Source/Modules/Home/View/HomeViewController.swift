@@ -1,16 +1,20 @@
+import Kingfisher
+import Power
 import ReactiveCocoa
 import ReactiveSwift
 import Result
 import UIKit
 
-public class HomeViewController: BaseViewController<DefaultHomePresenter>, HomeView {
+public class HomeViewController: BaseViewController<DefaultHomePresenter>, HomeView, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet private weak var loginButton: UIButton!
     @IBOutlet private weak var loginInfoLabel: UILabel!
 
     @IBOutlet private weak var userInfoWrapperView: UIView!
+    @IBOutlet private weak var userImageView: UIImageView!
     @IBOutlet private weak var userInfoLabel: UILabel!
 
-    @IBOutlet private weak var photosTable: UITableView!
+    @IBOutlet private weak var imagesTable: UITableView!
+    private let refreshControl = UIRefreshControl()
 
     public override var navigationForegroundColor: UIColor {
         return .imgurBrowserWhiteText
@@ -34,17 +38,52 @@ public class HomeViewController: BaseViewController<DefaultHomePresenter>, HomeV
         
         userInfoWrapperView.reactive.isHidden <~ presenter.userLogged.isNil
         userInfoWrapperView.backgroundColor = .imgurBrowserGreenBackground
+        userImageView.cropAsCircleWithBorder(borderColor: .white, strokeWidth: 3)
         userInfoLabel.textColor = .imgurBrowserWhiteText
         userInfoLabel.reactive.text <~ presenter.userLogged.map(mapGreeting)
-        photosTable.reactive.isHidden <~ presenter.userLogged.isNil
+        
+        presenter.userLogged.signal.observeValuesOnUIScheduler(setUserImage)
+        
+        imagesTable.reactive.isHidden <~ presenter.userLogged.isNil
+        imagesTable.refreshControl = refreshControl
+        imagesTable.dataSource = self
+        imagesTable.delegate = self
+        imagesTable.register(HomeImageCell.self)
+        imagesTable.rowHeight = UITableView.automaticDimension
+        imagesTable.estimatedRowHeight = 100
+        
+        refreshControl.reactive.refresh = CocoaAction(presenter.refreshAction)
         
         navigationItem.leftBarButtonItem = editBarButton
         navigationItem.rightBarButtonItem = logoutBarButton
         editButtonAction.onCompletedAction(presenter.enableEditMode)
         logoutBarButtonAction.onCompletedAction(presenter.logout)
+        
+        presenter.images.signal.onValueReceivedOnUIScheduler(imagesTable.reloadData)
     }
 
     // MARK: - HomeView methods
+    
+    // MARK: - UITableViewDataSource
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter.images.value.count
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let image = presenter.images.value[indexPath.row]
+        let cell: HomeImageCell = cellFactory.createCell(viewModel: image, indexPath: indexPath, totalRows: presenter.images.value.count)
+        return cell
+    }
+    
+    // MARK: - UITableViewDelegate
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let image = presenter.images.value[indexPath.row]
+        presenter.show(image: image)
+    }
     
     // MARK: - Private methods
     
@@ -76,4 +115,44 @@ public class HomeViewController: BaseViewController<DefaultHomePresenter>, HomeV
         let enabledIf = Property(presenter.userLogged.isNotNil)
         return Action<Void, Void, NoError>(enabledIf: enabledIf) { _ in return SignalProducer(value: ()) }
     }()
+    
+    private lazy var cellFactory: TableCellFactory = {
+        return TableCellFactory(tableView: self.imagesTable)
+    }()
+    
+    private func setUserImage(user: User?) {
+        if let user = user {
+            self.userImageView.kf.setImage(with: user.avatarUrl)
+        } else {
+            self.userImageView.image = nil
+        }
+    }
+}
+
+public extension UIImageView {
+    public func cropAsCircleWithBorder(borderColor: UIColor, strokeWidth: Int) {
+        let strokeWidthFloat = CGFloat(strokeWidth)
+        
+        var radius = min(self.bounds.width, self.bounds.height)
+        var drawingRect: CGRect = self.bounds
+        drawingRect.size.width = radius
+        drawingRect.origin.x = (self.bounds.size.width - radius) / 2
+        drawingRect.size.height = radius
+        drawingRect.origin.y = (self.bounds.size.height - radius) / 2
+        
+        radius /= 2
+        
+        var path = UIBezierPath(roundedRect: drawingRect.insetBy(dx: strokeWidthFloat / 2, dy: strokeWidthFloat / 2), cornerRadius: radius)
+        let border = CAShapeLayer()
+        border.fillColor = UIColor.clear.cgColor
+        border.path = path.cgPath
+        border.strokeColor = borderColor.cgColor
+        border.lineWidth = strokeWidthFloat
+        layer.addSublayer(border)
+        
+        path = UIBezierPath(roundedRect: drawingRect, cornerRadius: radius)
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        layer.mask = mask
+    }
 }

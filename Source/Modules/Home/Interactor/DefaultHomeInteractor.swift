@@ -11,14 +11,21 @@ public class DefaultHomeInteractor: HomeInteractor {
         self.imageController = imageController
         
         userLogged <~ userController.userLogged
+        images <~ imageController.images
 	}
 
     // MARK: - HomeInteractor methods
 
     public let userLogged = MutableProperty<User?>(nil)
-    
+    public let images = MutableProperty([Image]())
+
     public func logout() {
         userController.logout()
+    }
+    
+    public func refreshImages() -> SignalProducer<Void, RefreshingImagesError> {
+        return imageController.fetchImages()
+            .mapError(RefreshingImagesError.map)
     }
     
     // MARK: - Private methods

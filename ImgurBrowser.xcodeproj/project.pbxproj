@@ -24,6 +24,12 @@
 		E2952BED215AD25100D1CA72 /* RetrieveImagesTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2952BEC215AD25100D1CA72 /* RetrieveImagesTask.swift */; };
 		E2952BEF215AD32D00D1CA72 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2952BEE215AD32D00D1CA72 /* ImageController.swift */; };
 		E2952BF1215AD8E300D1CA72 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2952BF0215AD8E300D1CA72 /* Response.swift */; };
+		E2952BF4215BED9400D1CA72 /* HomeImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2952BF2215BED9400D1CA72 /* HomeImageCell.swift */; };
+		E2952BF5215BED9400D1CA72 /* HomeImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2952BF3215BED9400D1CA72 /* HomeImageCell.xib */; };
+		E2952BF8215BF13000D1CA72 /* RefreshingImagesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2952BF7215BF13000D1CA72 /* RefreshingImagesError.swift */; };
+		E2952BFA215BF17800D1CA72 /* FetchImagesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2952BF9215BF17800D1CA72 /* FetchImagesError.swift */; };
+		E2952BFE215BF9B600D1CA72 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2952BFC215BF9A800D1CA72 /* CryptoSwift.framework */; };
+		E2952BFF215BF9B600D1CA72 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E2952BFC215BF9A800D1CA72 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E2D74057215676E9009B6E08 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74052215676E9009B6E08 /* ReactiveSwift.framework */; };
 		E2D74058215676E9009B6E08 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74052215676E9009B6E08 /* ReactiveSwift.framework */; };
 		E2D74059215676E9009B6E08 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D74052215676E9009B6E08 /* ReactiveSwift.framework */; };
@@ -137,6 +143,7 @@
 				E2D7406B2156779E009B6E08 /* ReactiveMapKit.framework in Embed Frameworks */,
 				E2D7411B2156C72C009B6E08 /* Kingfisher.framework in Embed Frameworks */,
 				E2D7411D2156C72C009B6E08 /* SVProgressHUD.framework in Embed Frameworks */,
+				E2952BFF215BF9B600D1CA72 /* CryptoSwift.framework in Embed Frameworks */,
 				E2D740672156779E009B6E08 /* Power.framework in Embed Frameworks */,
 				E2D7406F2156779E009B6E08 /* Result.framework in Embed Frameworks */,
 				E2D740692156779E009B6E08 /* ReactiveCocoa.framework in Embed Frameworks */,
@@ -171,6 +178,11 @@
 		E2952BEC215AD25100D1CA72 /* RetrieveImagesTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveImagesTask.swift; sourceTree = "<group>"; };
 		E2952BEE215AD32D00D1CA72 /* ImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 		E2952BF0215AD8E300D1CA72 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		E2952BF2215BED9400D1CA72 /* HomeImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeImageCell.swift; sourceTree = "<group>"; };
+		E2952BF3215BED9400D1CA72 /* HomeImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeImageCell.xib; sourceTree = "<group>"; };
+		E2952BF7215BF13000D1CA72 /* RefreshingImagesError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshingImagesError.swift; sourceTree = "<group>"; };
+		E2952BF9215BF17800D1CA72 /* FetchImagesError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchImagesError.swift; sourceTree = "<group>"; };
+		E2952BFC215BF9A800D1CA72 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
 		E2D74052215676E9009B6E08 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		E2D74053215676E9009B6E08 /* ReactiveMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveMapKit.framework; path = Carthage/Build/iOS/ReactiveMapKit.framework; sourceTree = "<group>"; };
 		E2D74054215676E9009B6E08 /* Power.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Power.framework; path = Carthage/Build/iOS/Power.framework; sourceTree = "<group>"; };
@@ -250,6 +262,7 @@
 				E2D7411C2156C72C009B6E08 /* SVProgressHUD.framework in Frameworks */,
 				E2D7405D215676E9009B6E08 /* Power.framework in Frameworks */,
 				E2D74057215676E9009B6E08 /* ReactiveSwift.framework in Frameworks */,
+				E2952BFE215BF9B600D1CA72 /* CryptoSwift.framework in Frameworks */,
 				E2D7405A215676E9009B6E08 /* ReactiveMapKit.framework in Frameworks */,
 				E2D7406E2156779E009B6E08 /* Result.framework in Frameworks */,
 				E2D741182156C72C009B6E08 /* Cartography.framework in Frameworks */,
@@ -289,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				E2221923215827BB00E89C11 /* Models */,
+				E2952BFB215BF18A00D1CA72 /* Errors */,
 				E2D7415F21576F82009B6E08 /* UserController.swift */,
 				E2952BEE215AD32D00D1CA72 /* ImageController.swift */,
 			);
@@ -374,9 +388,26 @@
 			path = Unit;
 			sourceTree = "<group>";
 		};
+		E2952BF6215BF11D00D1CA72 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E2952BF7215BF13000D1CA72 /* RefreshingImagesError.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E2952BFB215BF18A00D1CA72 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				E2952BF9215BF17800D1CA72 /* FetchImagesError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		E2D74051215676CF009B6E08 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E2952BFC215BF9A800D1CA72 /* CryptoSwift.framework */,
 				E2D741142156C71D009B6E08 /* Cartography.framework */,
 				E2D741122156C71D009B6E08 /* Kingfisher.framework */,
 				E2D741132156C71D009B6E08 /* SVProgressHUD.framework */,
@@ -528,6 +559,7 @@
 		E2D741472156E743009B6E08 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E2952BF6215BF11D00D1CA72 /* Model */,
 				E2D7414B2156E771009B6E08 /* Interactor */,
 				E2D741492156E762009B6E08 /* Presenter */,
 				E2D7414A2156E76B009B6E08 /* View */,
@@ -550,6 +582,8 @@
 				E2D7412C2156E727009B6E08 /* HomeViewController.storyboard */,
 				E2D7412D2156E727009B6E08 /* HomeViewController.swift */,
 				E2D741302156E727009B6E08 /* HomeView.swift */,
+				E2952BF2215BED9400D1CA72 /* HomeImageCell.swift */,
+				E2952BF3215BED9400D1CA72 /* HomeImageCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -753,6 +787,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2952BF5215BED9400D1CA72 /* HomeImageCell.xib in Resources */,
 				E2D7414E2156EA39009B6E08 /* Localizable.strings in Resources */,
 				E2D741332156E727009B6E08 /* HomeViewController.storyboard in Resources */,
 				E2D740F22156C2AA009B6E08 /* AlertViewController.storyboard in Resources */,
@@ -813,6 +848,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CryptoSwift.framework",
 			);
 			name = "Carthage: Strip Symbols";
 			outputFileListPaths = (
@@ -856,6 +892,7 @@
 				E2D741232156CA25009B6E08 /* Utils.swift in Sources */,
 				E2D740F32156C2AA009B6E08 /* AlertViewController.swift in Sources */,
 				E2D7417121577C6D009B6E08 /* LoginPresenter.swift in Sources */,
+				E2952BFA215BF17800D1CA72 /* FetchImagesError.swift in Sources */,
 				E2D7416221576F90009B6E08 /* NetworkController.swift in Sources */,
 				E2D7415D2156F179009B6E08 /* TableCellFactory.swift in Sources */,
 				E2D7417721577C6D009B6E08 /* DefaultLoginPresenter.swift in Sources */,
@@ -877,9 +914,11 @@
 				E22219212157982F00E89C11 /* LoginEvent.swift in Sources */,
 				E2D7417521577C6D009B6E08 /* LoginInteractor.swift in Sources */,
 				E2952BEF215AD32D00D1CA72 /* ImageController.swift in Sources */,
+				E2952BF4215BED9400D1CA72 /* HomeImageCell.swift in Sources */,
 				E2D740EF2156C2AA009B6E08 /* ToastRemoveType.swift in Sources */,
 				E2D740D32156C0F7009B6E08 /* ViewModel.swift in Sources */,
 				E2D7417321577C6D009B6E08 /* LoginViewController.swift in Sources */,
+				E2952BF8215BF13000D1CA72 /* RefreshingImagesError.swift in Sources */,
 				E282050F21566F3100E0B220 /* AppDelegate.swift in Sources */,
 				E28B413621595BB20060E626 /* NetworkMethod.swift in Sources */,
 				E2D740C62156C0F7009B6E08 /* RootWireframeiOS.swift in Sources */,

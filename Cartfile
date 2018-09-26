@@ -1,4 +1,5 @@
 github "sebastianvarela/Power"
+github "krzyzanowskim/CryptoSwift"
 github "SVProgressHUD/SVProgressHUD"
 github "robb/Cartography"
 github "onevcat/Kingfisher"

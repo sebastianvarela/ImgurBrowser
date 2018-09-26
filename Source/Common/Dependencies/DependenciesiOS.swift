@@ -11,6 +11,11 @@ public class DependenciesiOS: SharedDependencies {
         toastManager = ToastManager(applicationRootWindow: window)
         
         super.init()
+        
+        super.networkController
+            .connecting
+            .signal
+            .observeValuesOnUIScheduler(rootWireframe.updateGlobalNetworkActivity)
     }
     
     public lazy var factory: Factory = {
