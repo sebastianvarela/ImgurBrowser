@@ -114,6 +114,8 @@
 		E2D7417621577C6D009B6E08 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7416F21577C6D009B6E08 /* LoginView.swift */; };
 		E2D7417721577C6D009B6E08 /* DefaultLoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7417021577C6D009B6E08 /* DefaultLoginPresenter.swift */; };
 		E2D7417D21578262009B6E08 /* RequestingAuthorizationUrlError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7417C21578262009B6E08 /* RequestingAuthorizationUrlError.swift */; };
+		E2EC6DDC215ECD5D00596B6E /* PhotoLibraryPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EC6DDB215ECD5D00596B6E /* PhotoLibraryPickerController.swift */; };
+		E2EC6DDE215ECECB00596B6E /* AttachmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EC6DDD215ECECB00596B6E /* AttachmentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -252,6 +254,8 @@
 		E2D7416F21577C6D009B6E08 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E2D7417021577C6D009B6E08 /* DefaultLoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLoginPresenter.swift; sourceTree = "<group>"; };
 		E2D7417C21578262009B6E08 /* RequestingAuthorizationUrlError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestingAuthorizationUrlError.swift; sourceTree = "<group>"; };
+		E2EC6DDB215ECD5D00596B6E /* PhotoLibraryPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryPickerController.swift; sourceTree = "<group>"; };
+		E2EC6DDD215ECECB00596B6E /* AttachmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -476,6 +480,8 @@
 				E2D740DF2156C2AA009B6E08 /* Toast */,
 				E2D7411F2156CA25009B6E08 /* PausableTimer.swift */,
 				E2D741202156CA25009B6E08 /* Utils.swift */,
+				E2EC6DDB215ECD5D00596B6E /* PhotoLibraryPickerController.swift */,
+				E2EC6DDD215ECECB00596B6E /* AttachmentViewModel.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -897,6 +903,7 @@
 				E2D7415D2156F179009B6E08 /* TableCellFactory.swift in Sources */,
 				E2D7417721577C6D009B6E08 /* DefaultLoginPresenter.swift in Sources */,
 				E2D740D72156C0F7009B6E08 /* ProcessErrorAction.swift in Sources */,
+				E2EC6DDE215ECECB00596B6E /* AttachmentViewModel.swift in Sources */,
 				E2221927215827CB00E89C11 /* Image.swift in Sources */,
 				E2D741222156CA25009B6E08 /* PausableTimer.swift in Sources */,
 				E2D740D42156C0F7009B6E08 /* ProcessError.swift in Sources */,
@@ -922,6 +929,7 @@
 				E282050F21566F3100E0B220 /* AppDelegate.swift in Sources */,
 				E28B413621595BB20060E626 /* NetworkMethod.swift in Sources */,
 				E2D740C62156C0F7009B6E08 /* RootWireframeiOS.swift in Sources */,
+				E2EC6DDC215ECD5D00596B6E /* PhotoLibraryPickerController.swift in Sources */,
 				E2D741072156C374009B6E08 /* ImgurBrowserNavigationControllerView.swift in Sources */,
 				E2D740752156BF2F009B6E08 /* Constants.swift in Sources */,
 				E2D7417421577C6D009B6E08 /* DefaultLoginInteractor.swift in Sources */,

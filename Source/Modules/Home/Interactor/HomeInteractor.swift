@@ -8,4 +8,5 @@ public protocol HomeInteractor: Interactor {
     
     func logout()
     func refreshImages() -> SignalProducer<Void, RefreshingImagesError>
+    func checkPermissionForMedia() -> SignalProducer<Bool, NoError>
 }

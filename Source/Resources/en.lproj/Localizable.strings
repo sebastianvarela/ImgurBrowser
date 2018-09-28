@@ -1,9 +1,17 @@
 /* General */
 "General.Alert.ErrorTitle" = "Error";
 "General.Alert.ErrorBody" = "There has been an error processing the request. Please, try again later.";
+"General.Alert.PermissionTitle" = "Permissions";
+"General.Alert.PermissionBody" = "Permissions needed to access your photos. You can enable access in your mobile settings.";
 "General.Alert.CancelButton" = "Cancel";
 "General.Alert.ApplyButton" = "Apply";
 "General.Alert.AcceptButton" = "Accept";
+
+/* Image Picker */
+"ImagePicker.SelectSource.Title" = "Upload new photo";
+"ImagePicker.SelectSource.Gallery" = "Pick from gallery";
+"ImagePicker.SelectSource.Camera" = "Take picture";
+"ImagePicker.SelectSource.Cancel" = "Cancel";
 
 /* Home */
 "Home.Title" = "Home";

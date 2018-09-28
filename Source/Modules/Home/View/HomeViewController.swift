@@ -5,7 +5,7 @@ import ReactiveSwift
 import Result
 import UIKit
 
-public class HomeViewController: BaseViewController<DefaultHomePresenter>, HomeView, UITableViewDataSource, UITableViewDelegate {
+public class HomeViewController: BaseViewController<DefaultHomePresenter>, HomeView, UITableViewDataSource, UITableViewDelegate, PhotoLibraryPickerDelegate {
     @IBOutlet private weak var loginButton: UIButton!
     @IBOutlet private weak var loginInfoLabel: UILabel!
 
@@ -63,6 +63,25 @@ public class HomeViewController: BaseViewController<DefaultHomePresenter>, HomeV
     }
 
     // MARK: - HomeView methods
+
+    public func showImagePicker() {
+        let alert = UIAlertController(title: NSLocalizedString("ImagePicker.SelectSource.Title"), message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("ImagePicker.SelectSource.Camera"), style: .default) { _ in
+            let controller = PhotoLibraryPickerController(useCameraIfPossible: true)
+            controller.pickerDelegate = self
+            self.present(controller, animated: true, completion: nil)
+        })
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("ImagePicker.SelectSource.Gallery"), style: .default) { _ in
+            let controller = PhotoLibraryPickerController(useCameraIfPossible: false)
+            controller.pickerDelegate = self
+            self.present(controller, animated: true, completion: nil)
+        })
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("ImagePicker.SelectSource.Cancel"), style: .cancel, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
+    }
     
     // MARK: - UITableViewDataSource
     
@@ -83,6 +102,12 @@ public class HomeViewController: BaseViewController<DefaultHomePresenter>, HomeV
         
         let image = presenter.images.value[indexPath.row]
         presenter.show(image: image)
+    }
+    
+    // MARK: - PhotoLibraryPickerDelegate
+    
+    public func photoLibraryPickerView(didSelectAttachment attachment: AttachmentViewModel) {
+        logTrace("Selected attachment: \(attachment)")
     }
     
     // MARK: - Private methods

@@ -36,11 +36,15 @@ public class SharedDependencies {
     public lazy var networkController: NetworkController = {
         return DefaultNetworkController(environmentController: environmentController)
     }()
+    
+    public lazy var permissionWrapper: PermissionWrapper = {
+        return DefaultPermissionWrapper()
+    }()
    
     // MARK: - Interactors
 
     public lazy var homeInteractor: HomeInteractor = {
-        return DefaultHomeInteractor(userController: userController, imageController: imageController)
+        return DefaultHomeInteractor(userController: userController, imageController: imageController, permissionWrapper: permissionWrapper)
     }()
     
     public lazy var loginInteractor: LoginInteractor = {

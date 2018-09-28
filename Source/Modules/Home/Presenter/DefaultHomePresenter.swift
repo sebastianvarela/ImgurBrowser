@@ -33,7 +33,18 @@ public class DefaultHomePresenter: HomePresenter {
     }
     
     public func addImage() {
-        
+        interactor.checkPermissionForMedia()
+            .start(on: UIScheduler())
+            .startWithValues { canAccess in
+                if canAccess {
+                    self.view?.showImagePicker()
+                } else {
+                    self.view?.presentAlert(title: NSLocalizedString("General.Alert.PermissionTitle"),
+                                            subTitle: NSLocalizedString("General.Alert.PermissionBody")) {
+                                                self.view?.showSystemSettings(completion: nil)
+                    }
+                }
+            }
     }
     
     public func enableEditMode() {

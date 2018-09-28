@@ -1,9 +1,17 @@
 /* General */
 "General.Alert.ErrorTitle" = "Error";
 "General.Alert.ErrorBody" = "Ha ocurrido un error, por favor inténtalo de nuevo más tarde";
+"General.Alert.PermissionTitle" = "Permisos";
+"General.Alert.PermissionBody" = "Se necesitan permisos para acceder a tus imágenes. Puedes gestionarlos en los ajustes de tu teléfono.";
 "General.Alert.CancelButton" = "Cancelar";
 "General.Alert.ApplyButton" = "Aplicar";
 "General.Alert.AcceptButton" = "Aceptar";
+
+/* Image Picker */
+"ImagePicker.SelectSource.Title" = "Sube una imagen";
+"ImagePicker.SelectSource.Gallery" = "Elije de la galería";
+"ImagePicker.SelectSource.Camera" = "Saca una foto";
+"ImagePicker.SelectSource.Cancel" = "Cancelar";
 
 /* Home */
 "Home.Title" = "Inicio";
