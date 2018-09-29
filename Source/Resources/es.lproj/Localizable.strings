@@ -8,19 +8,20 @@
 "General.Alert.AcceptButton" = "Aceptar";
 
 /* Image Picker */
-"ImagePicker.SelectSource.Title" = "Sube una imagen";
+"ImagePicker.SelectSource.Title" = "Sube una foto";
 "ImagePicker.SelectSource.Gallery" = "Elije de la galería";
 "ImagePicker.SelectSource.Camera" = "Saca una foto";
 "ImagePicker.SelectSource.Cancel" = "Cancelar";
 
 /* Home */
 "Home.Title" = "Inicio";
+"Home.AddImageButton" = "Sube una foto";
+"Home.LoginInfo" = "Para ver y editar tus fotos, por favor inicia sesión";
+"Home.LoginButton" = "Iniciar sesión";
+"Home.UserInfoLabel" = "{{USER}}";
+"Home.LogoutButton" = "Salir";
 
 /* Login */
-"Login.LoginInfo" = "Para ver y editar tus fotos, por favor inicia sesión";
-"Login.LoginButton" = "Iniciar sesión";
-"Login.UserInfoLabel" = "{{USER}}";
-"Login.LogoutButton" = "Salir";
 "Login.Alert.UserDeclineAccessTitle" = "Error";
 "Login.Alert.UserDeclineAccessBody" = "Si quieres continuar necesitas dar acceso a tu cuenta";
 "Login.Alert.CallbackErrorTitle" = "Error";

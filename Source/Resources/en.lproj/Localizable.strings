@@ -10,17 +10,18 @@
 /* Image Picker */
 "ImagePicker.SelectSource.Title" = "Upload new photo";
 "ImagePicker.SelectSource.Gallery" = "Pick from gallery";
-"ImagePicker.SelectSource.Camera" = "Take picture";
+"ImagePicker.SelectSource.Camera" = "Take photo";
 "ImagePicker.SelectSource.Cancel" = "Cancel";
 
 /* Home */
 "Home.Title" = "Home";
+"Home.AddImageButton" = "Upload new photo";
+"Home.LoginInfo" = "To see and edit your photos, please login";
+"Home.LoginButton" = "Login";
+"Home.UserInfoLabel" = "{{USER}}";
+"Home.LogoutButton" = "Logout";
 
 /* Login */
-"Login.LoginInfo" = "To see and edit your photos, please login";
-"Login.LoginButton" = "Login";
-"Login.UserInfoLabel" = "{{USER}}";
-"Login.LogoutButton" = "Logout";
 "Login.Alert.UserDeclineAccessTitle" = "Error";
 "Login.Alert.UserDeclineAccessBody" = "If you want to continue you need to give access to your account";
 "Login.Alert.CallbackErrorTitle" = "Error";

@@ -25,10 +25,10 @@ public class HomeViewController: BaseViewController<DefaultHomePresenter>, HomeV
         
         view.backgroundColor = .imgurBrowserGreenBackground
         
-        loginInfoLabel.text = NSLocalizedString("Login.LoginInfo")
+        loginInfoLabel.text = NSLocalizedString("Home.LoginInfo")
         loginInfoLabel.textColor = .imgurBrowserWhiteText
 
-        loginButton.setTitle(NSLocalizedString("Login.LoginButton"), for: .normal)
+        loginButton.setTitle(NSLocalizedString("Home.LoginButton"), for: .normal)
         loginButton.setTitleColor(.imgurBrowserBlackText, for: .normal)
         loginButton.backgroundColor = .imgurBrowserYellowBackground
         loginButton.layer.cornerRadius = 8
@@ -51,7 +51,9 @@ public class HomeViewController: BaseViewController<DefaultHomePresenter>, HomeV
         imagesTable.register(HomeImageCell.self)
         imagesTable.rowHeight = UITableView.automaticDimension
         imagesTable.estimatedRowHeight = 100
-        
+        imagesTable.tableFooterView = UIView()
+        imagesTable.backgroundColor = .imgurBrowserLightGrayBackground
+
         refreshControl.reactive.refresh = CocoaAction(presenter.refreshAction)
         
         navigationItem.leftBarButtonItem = editBarButton
@@ -85,11 +87,33 @@ public class HomeViewController: BaseViewController<DefaultHomePresenter>, HomeV
     
     // MARK: - UITableViewDataSource
     
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard section == 0 else {
+            return 1
+        }
         return presenter.images.value.count
     }
     
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 1 {
+            return 15
+        } else {
+            return 0
+        }
+    }
+    
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard indexPath.section == 0 else {
+            return addImageTableViewCell
+        }
         let image = presenter.images.value[indexPath.row]
         let cell: HomeImageCell = cellFactory.createCell(viewModel: image, indexPath: indexPath, totalRows: presenter.images.value.count)
         return cell
@@ -99,9 +123,14 @@ public class HomeViewController: BaseViewController<DefaultHomePresenter>, HomeV
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let cell = tableView.cellForRow(at: indexPath)
         
-        let image = presenter.images.value[indexPath.row]
-        presenter.show(image: image)
+        if cell == addImageTableViewCell {
+            presenter.addImage()
+        } else {
+            let image = presenter.images.value[indexPath.row]
+            presenter.show(image: image)
+        }
     }
     
     // MARK: - PhotoLibraryPickerDelegate
@@ -114,7 +143,7 @@ public class HomeViewController: BaseViewController<DefaultHomePresenter>, HomeV
     
     private func mapGreeting(user: User?) -> String {
         if let user = user {
-            return NSLocalizedString("Login.UserInfoLabel").replacingOccurrences(of: "{{USER}}", with: user.username)
+            return NSLocalizedString("Home.UserInfoLabel").replacingOccurrences(of: "{{USER}}", with: user.username)
         }
         return ""
     }
@@ -126,7 +155,7 @@ public class HomeViewController: BaseViewController<DefaultHomePresenter>, HomeV
     }()
     
     private lazy var logoutBarButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: NSLocalizedString("Login.LogoutButton"), style: UIBarButtonItem.Style.plain, target: nil, action: nil)
+        let button = UIBarButtonItem(title: NSLocalizedString("Home.LogoutButton"), style: UIBarButtonItem.Style.plain, target: nil, action: nil)
         button.reactive.pressed = CocoaAction(logoutBarButtonAction)
         return button
     }()
@@ -141,6 +170,15 @@ public class HomeViewController: BaseViewController<DefaultHomePresenter>, HomeV
         return Action<Void, Void, NoError>(enabledIf: enabledIf) { _ in return SignalProducer(value: ()) }
     }()
     
+    private lazy var addImageTableViewCell: UITableViewCell = {
+        let cell = UITableViewCell()
+        cell.textLabel?.textColor = .imgurBrowserGreenText
+        cell.textLabel?.font = .boldSystemFont(ofSize: 16)
+        cell.textLabel?.text = NSLocalizedString("Home.AddImageButton")
+        cell.textLabel?.textAlignment = .center
+        return cell
+    }()
+    
     private lazy var cellFactory: TableCellFactory = {
         return TableCellFactory(tableView: self.imagesTable)
     }()
@@ -151,33 +189,5 @@ public class HomeViewController: BaseViewController<DefaultHomePresenter>, HomeV
         } else {
             self.userImageView.image = nil
         }
-    }
-}
-
-public extension UIImageView {
-    public func cropAsCircleWithBorder(borderColor: UIColor, strokeWidth: Int) {
-        let strokeWidthFloat = CGFloat(strokeWidth)
-        
-        var radius = min(self.bounds.width, self.bounds.height)
-        var drawingRect: CGRect = self.bounds
-        drawingRect.size.width = radius
-        drawingRect.origin.x = (self.bounds.size.width - radius) / 2
-        drawingRect.size.height = radius
-        drawingRect.origin.y = (self.bounds.size.height - radius) / 2
-        
-        radius /= 2
-        
-        var path = UIBezierPath(roundedRect: drawingRect.insetBy(dx: strokeWidthFloat / 2, dy: strokeWidthFloat / 2), cornerRadius: radius)
-        let border = CAShapeLayer()
-        border.fillColor = UIColor.clear.cgColor
-        border.path = path.cgPath
-        border.strokeColor = borderColor.cgColor
-        border.lineWidth = strokeWidthFloat
-        layer.addSublayer(border)
-        
-        path = UIBezierPath(roundedRect: drawingRect, cornerRadius: radius)
-        let mask = CAShapeLayer()
-        mask.path = path.cgPath
-        layer.mask = mask
     }
 }

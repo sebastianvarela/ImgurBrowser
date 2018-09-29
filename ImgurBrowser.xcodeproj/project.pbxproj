@@ -116,6 +116,7 @@
 		E2D7417D21578262009B6E08 /* RequestingAuthorizationUrlError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7417C21578262009B6E08 /* RequestingAuthorizationUrlError.swift */; };
 		E2EC6DDC215ECD5D00596B6E /* PhotoLibraryPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EC6DDB215ECD5D00596B6E /* PhotoLibraryPickerController.swift */; };
 		E2EC6DDE215ECECB00596B6E /* AttachmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EC6DDD215ECECB00596B6E /* AttachmentViewModel.swift */; };
+		E2EC6DE0215F52FF00596B6E /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EC6DDF215F52FF00596B6E /* UIImageViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -256,6 +257,7 @@
 		E2D7417C21578262009B6E08 /* RequestingAuthorizationUrlError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestingAuthorizationUrlError.swift; sourceTree = "<group>"; };
 		E2EC6DDB215ECD5D00596B6E /* PhotoLibraryPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryPickerController.swift; sourceTree = "<group>"; };
 		E2EC6DDD215ECECB00596B6E /* AttachmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentViewModel.swift; sourceTree = "<group>"; };
+		E2EC6DDF215F52FF00596B6E /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -491,6 +493,7 @@
 			children = (
 				E2D740DC2156C2AA009B6E08 /* ReactiveExtensions.swift */,
 				E2D740DE2156C2AA009B6E08 /* UIColorExtensions.swift */,
+				E2EC6DDF215F52FF00596B6E /* UIImageViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -930,6 +933,7 @@
 				E28B413621595BB20060E626 /* NetworkMethod.swift in Sources */,
 				E2D740C62156C0F7009B6E08 /* RootWireframeiOS.swift in Sources */,
 				E2EC6DDC215ECD5D00596B6E /* PhotoLibraryPickerController.swift in Sources */,
+				E2EC6DE0215F52FF00596B6E /* UIImageViewExtensions.swift in Sources */,
 				E2D741072156C374009B6E08 /* ImgurBrowserNavigationControllerView.swift in Sources */,
 				E2D740752156BF2F009B6E08 /* Constants.swift in Sources */,
 				E2D7417421577C6D009B6E08 /* DefaultLoginInteractor.swift in Sources */,
