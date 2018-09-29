@@ -67,6 +67,10 @@ public class HomeViewController: BaseViewController<DefaultHomePresenter>, HomeV
 
     // MARK: - HomeView methods
 
+    public func focusOnFirstImage() {
+        imagesTable.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: true)
+    }
+    
     public func enableEditMode() {
         imagesTable.setEditing(true, animated: true)
         navigationItem.leftBarButtonItem = disableEditBarButton

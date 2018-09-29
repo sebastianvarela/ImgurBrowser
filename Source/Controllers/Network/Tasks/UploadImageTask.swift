@@ -6,9 +6,7 @@ public struct UploadImageTask: NetworkTask {
     public let attachment: AttachmentViewModel
     
     public var contentType: NetworkContentType {
-        let body = ["image": attachment.base64Content,
-                    "type": "base64"]
-        return .formURLEncoded(body: body)
+        return .form(body: ["image": attachment.base64Content], boundary: "ASFKJASKFJASKFJAKSFJASKFJ")
     }
     public var method: NetworkMethod { return .post }
     public var path: String { return "/3/image" }

@@ -45,6 +45,17 @@ public class AttachmentViewModel {
         }
     }
     
+    public lazy var contentType: String = {
+        switch type {
+        case .image(_, .jpeg):
+            return "image/jpeg"
+        case .image(_, .png):
+            return "image/png"
+        case .video(let mediaURL, _):
+            return "video/quicktime"
+        }
+    }()
+    
     public lazy var base64Content: String = {
         guard let bytes = self.bytes else {
             return ""

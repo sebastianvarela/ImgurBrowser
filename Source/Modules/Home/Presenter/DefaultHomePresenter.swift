@@ -71,10 +71,13 @@ public class DefaultHomePresenter: HomePresenter {
     public func upload(attachment: AttachmentViewModel) {
         view?.showGlobalSpinnerView()
         interactor.upload(attachment: attachment)
-            .start(on: UIScheduler())
             .onProcessError(showOn: view, wireframe: wireframe)
+            .flatMap(.concat) { _ in self.interactor.refreshImages() }
+            .onProcessError(showOn: view, wireframe: wireframe)
+            .start(on: UIScheduler())
             .startWithCompleted {
                 self.view?.hideGlobalSpinnerView()
+                self.view?.focusOnFirstImage()
             }
     }
     
