@@ -6,6 +6,8 @@ import Result
 public protocol ImageController {
     var images: MutableProperty<[Image]> { get }
     
+    func delete(image: Image) -> SignalProducer<Void, DeleteError>
+    func upload(attachment: AttachmentViewModel) -> SignalProducer<Void, UploadError>
     func fetchImages() -> SignalProducer<Void, FetchImagesError>
 }
 
@@ -28,12 +30,42 @@ public class DefaultImageController: ImageController {
     
     public let images = MutableProperty([Image]())
     
+    public func delete(image: Image) -> SignalProducer<Void, DeleteError> {
+        return SignalProducer { observer, lifetime in
+            let task = DeleteImageTask(image: image)
+            
+            lifetime += self.networkController.execute(task: task)
+                .mapError(DeleteError.map)
+                .mapToVoid()
+                .onValue { _ in
+                    if let index = self.images.value.lastIndex(where: { $0.id == image.id }) {
+                        self.images.value.remove(at: index)
+                    }
+                }
+                .start(on: self.queue)
+                .start(observer)
+        }
+    }
+    
+    public func upload(attachment: AttachmentViewModel) -> SignalProducer<Void, UploadError> {
+        return SignalProducer { observer, lifetime in
+            let task = UploadImageTask(attachment: attachment)
+            
+            lifetime += self.networkController.execute(task: task)
+                .mapError(UploadError.map)
+                .mapToVoid()
+                .start(on: self.queue)
+                .start(observer)
+        }
+    }
+    
     public func fetchImages() -> SignalProducer<Void, FetchImagesError> {
         return SignalProducer { observer, lifetime in
             let task = RetrieveImagesTask(page: 0)
             
             lifetime += self.networkController.execute(task: task)
                 .mapError(FetchImagesError.map)
+                .onValue { self.images.swap($0.data) }
                 .mapToVoid()
                 .start(on: self.queue)
                 .start(observer)

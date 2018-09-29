@@ -117,6 +117,14 @@
 		E2EC6DDC215ECD5D00596B6E /* PhotoLibraryPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EC6DDB215ECD5D00596B6E /* PhotoLibraryPickerController.swift */; };
 		E2EC6DDE215ECECB00596B6E /* AttachmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EC6DDD215ECECB00596B6E /* AttachmentViewModel.swift */; };
 		E2EC6DE0215F52FF00596B6E /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EC6DDF215F52FF00596B6E /* UIImageViewExtensions.swift */; };
+		E2EC6DE2215F5C8400596B6E /* DeletingImageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EC6DE1215F5C8400596B6E /* DeletingImageError.swift */; };
+		E2EC6DE4215F5C9B00596B6E /* UploadingAttachmentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EC6DE3215F5C9B00596B6E /* UploadingAttachmentError.swift */; };
+		E2EC6DE6215F5F9600596B6E /* UploadImageTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EC6DE5215F5F9600596B6E /* UploadImageTask.swift */; };
+		E2EC6DE8215F5FD200596B6E /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EC6DE7215F5FD200596B6E /* Empty.swift */; };
+		E2EC6DEA215F607300596B6E /* UploadError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EC6DE9215F607300596B6E /* UploadError.swift */; };
+		E2EC6DEC215F67D800596B6E /* ImgurError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EC6DEB215F67D800596B6E /* ImgurError.swift */; };
+		E2EC6DEE215F734000596B6E /* DeleteImageTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EC6DED215F734000596B6E /* DeleteImageTask.swift */; };
+		E2EC6DF0215F73EB00596B6E /* DeleteError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EC6DEF215F73EB00596B6E /* DeleteError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -258,6 +266,14 @@
 		E2EC6DDB215ECD5D00596B6E /* PhotoLibraryPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryPickerController.swift; sourceTree = "<group>"; };
 		E2EC6DDD215ECECB00596B6E /* AttachmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentViewModel.swift; sourceTree = "<group>"; };
 		E2EC6DDF215F52FF00596B6E /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
+		E2EC6DE1215F5C8400596B6E /* DeletingImageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletingImageError.swift; sourceTree = "<group>"; };
+		E2EC6DE3215F5C9B00596B6E /* UploadingAttachmentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadingAttachmentError.swift; sourceTree = "<group>"; };
+		E2EC6DE5215F5F9600596B6E /* UploadImageTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageTask.swift; sourceTree = "<group>"; };
+		E2EC6DE7215F5FD200596B6E /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
+		E2EC6DE9215F607300596B6E /* UploadError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadError.swift; sourceTree = "<group>"; };
+		E2EC6DEB215F67D800596B6E /* ImgurError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurError.swift; sourceTree = "<group>"; };
+		E2EC6DED215F734000596B6E /* DeleteImageTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteImageTask.swift; sourceTree = "<group>"; };
+		E2EC6DEF215F73EB00596B6E /* DeleteError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -382,6 +398,8 @@
 			children = (
 				E28B4131215956B90060E626 /* NetworkToken.swift */,
 				E2952BF0215AD8E300D1CA72 /* Response.swift */,
+				E2EC6DEB215F67D800596B6E /* ImgurError.swift */,
+				E2EC6DE7215F5FD200596B6E /* Empty.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -398,6 +416,8 @@
 			isa = PBXGroup;
 			children = (
 				E2952BF7215BF13000D1CA72 /* RefreshingImagesError.swift */,
+				E2EC6DE1215F5C8400596B6E /* DeletingImageError.swift */,
+				E2EC6DE3215F5C9B00596B6E /* UploadingAttachmentError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -406,6 +426,8 @@
 			isa = PBXGroup;
 			children = (
 				E2952BF9215BF17800D1CA72 /* FetchImagesError.swift */,
+				E2EC6DE9215F607300596B6E /* UploadError.swift */,
+				E2EC6DEF215F73EB00596B6E /* DeleteError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -636,6 +658,8 @@
 			children = (
 				E28B4133215959D70060E626 /* NetworkTokenTask.swift */,
 				E2952BEC215AD25100D1CA72 /* RetrieveImagesTask.swift */,
+				E2EC6DE5215F5F9600596B6E /* UploadImageTask.swift */,
+				E2EC6DED215F734000596B6E /* DeleteImageTask.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -884,6 +908,7 @@
 				E2D741032156C300009B6E08 /* BaseView.swift in Sources */,
 				E2D740D02156C0F7009B6E08 /* View.swift in Sources */,
 				E2D7415C2156F179009B6E08 /* CollectionCellFactory.swift in Sources */,
+				E2EC6DF0215F73EB00596B6E /* DeleteError.swift in Sources */,
 				E2D740D92156C0F7009B6E08 /* SharedDependencies.swift in Sources */,
 				E2D740F02156C2AA009B6E08 /* ToastAlertPresentationController.swift in Sources */,
 				E28B4132215956B90060E626 /* NetworkToken.swift in Sources */,
@@ -897,23 +922,28 @@
 				E2D740C52156C0F7009B6E08 /* WireframeLoadType.swift in Sources */,
 				E2D740F12156C2AA009B6E08 /* ToastAlertViewController.swift in Sources */,
 				E2D740D82156C0F7009B6E08 /* DependenciesiOS.swift in Sources */,
+				E2EC6DE6215F5F9600596B6E /* UploadImageTask.swift in Sources */,
 				E2D741012156C300009B6E08 /* BaseViewController.swift in Sources */,
 				E2D741232156CA25009B6E08 /* Utils.swift in Sources */,
 				E2D740F32156C2AA009B6E08 /* AlertViewController.swift in Sources */,
 				E2D7417121577C6D009B6E08 /* LoginPresenter.swift in Sources */,
 				E2952BFA215BF17800D1CA72 /* FetchImagesError.swift in Sources */,
 				E2D7416221576F90009B6E08 /* NetworkController.swift in Sources */,
+				E2EC6DE8215F5FD200596B6E /* Empty.swift in Sources */,
 				E2D7415D2156F179009B6E08 /* TableCellFactory.swift in Sources */,
 				E2D7417721577C6D009B6E08 /* DefaultLoginPresenter.swift in Sources */,
 				E2D740D72156C0F7009B6E08 /* ProcessErrorAction.swift in Sources */,
+				E2EC6DEC215F67D800596B6E /* ImgurError.swift in Sources */,
 				E2EC6DDE215ECECB00596B6E /* AttachmentViewModel.swift in Sources */,
 				E2221927215827CB00E89C11 /* Image.swift in Sources */,
+				E2EC6DE4215F5C9B00596B6E /* UploadingAttachmentError.swift in Sources */,
 				E2D741222156CA25009B6E08 /* PausableTimer.swift in Sources */,
 				E2D740D42156C0F7009B6E08 /* ProcessError.swift in Sources */,
 				E2D741042156C300009B6E08 /* BaseTableViewCell.swift in Sources */,
 				E2952BED215AD25100D1CA72 /* RetrieveImagesTask.swift in Sources */,
 				E2D7416621576FB1009B6E08 /* NetworkTask.swift in Sources */,
 				E2D740D62156C0F7009B6E08 /* Presenter.swift in Sources */,
+				E2EC6DEA215F607300596B6E /* UploadError.swift in Sources */,
 				E2D741082156C374009B6E08 /* ImgurBrowserNavigationController.swift in Sources */,
 				E2D741382156E727009B6E08 /* DefaultHomePresenter.swift in Sources */,
 				E2D741372156E727009B6E08 /* HomeView.swift in Sources */,
@@ -924,6 +954,7 @@
 				E22219212157982F00E89C11 /* LoginEvent.swift in Sources */,
 				E2D7417521577C6D009B6E08 /* LoginInteractor.swift in Sources */,
 				E2952BEF215AD32D00D1CA72 /* ImageController.swift in Sources */,
+				E2EC6DEE215F734000596B6E /* DeleteImageTask.swift in Sources */,
 				E2952BF4215BED9400D1CA72 /* HomeImageCell.swift in Sources */,
 				E2D740EF2156C2AA009B6E08 /* ToastRemoveType.swift in Sources */,
 				E2D740D32156C0F7009B6E08 /* ViewModel.swift in Sources */,
@@ -937,6 +968,7 @@
 				E2D741072156C374009B6E08 /* ImgurBrowserNavigationControllerView.swift in Sources */,
 				E2D740752156BF2F009B6E08 /* Constants.swift in Sources */,
 				E2D7417421577C6D009B6E08 /* DefaultLoginInteractor.swift in Sources */,
+				E2EC6DE2215F5C8400596B6E /* DeletingImageError.swift in Sources */,
 				E2D741022156C300009B6E08 /* BaseCollectionViewCell.swift in Sources */,
 				E2D740EA2156C2AA009B6E08 /* ReactiveExtensions.swift in Sources */,
 				E2D741322156E727009B6E08 /* HomePresenter.swift in Sources */,

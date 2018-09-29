@@ -55,7 +55,7 @@ public class PhotoLibraryPickerController: UIViewController, UIImagePickerContro
                     image = originalImage
                 }
                 if let image = image {
-                    viewModel = AttachmentViewModel(type: .image(image: image, exportType: .jpeg(compressionQuality: 0.7)))
+                    viewModel = AttachmentViewModel(type: .image(image: image, exportType: .jpeg(compressionQuality: 0.5)))
                 }
             }
             

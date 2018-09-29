@@ -60,6 +60,11 @@ public class DefaultNetworkController: NetworkController {
                                     observer.send(error: .parseError)
                                 }
                             default:
+                                if let model = try? JSONDecoder().decode(Response<ImgurError>.self, from: value.0) {
+                                    logError("Task failed with code \(response.statusCode): \(model.data)")
+                                } else {
+                                    logError("Task failed with code \(response.statusCode)")
+                                }
                                 observer.send(error: .badResponse)
                             }
                         } else {

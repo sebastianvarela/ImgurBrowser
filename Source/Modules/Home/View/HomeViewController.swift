@@ -56,9 +56,10 @@ public class HomeViewController: BaseViewController<DefaultHomePresenter>, HomeV
 
         refreshControl.reactive.refresh = CocoaAction(presenter.refreshAction)
         
-        navigationItem.leftBarButtonItem = editBarButton
+        disableEditMode()
         navigationItem.rightBarButtonItem = logoutBarButton
-        editButtonAction.onCompletedAction(presenter.enableEditMode)
+        enableEditButtonAction.onCompletedAction(presenter.enableEditMode)
+        disableEditButtonAction.onCompletedAction(presenter.disableEditMode)
         logoutBarButtonAction.onCompletedAction(presenter.logout)
         
         presenter.images.signal.onValueReceivedOnUIScheduler(imagesTable.reloadData)
@@ -66,6 +67,16 @@ public class HomeViewController: BaseViewController<DefaultHomePresenter>, HomeV
 
     // MARK: - HomeView methods
 
+    public func enableEditMode() {
+        imagesTable.setEditing(true, animated: true)
+        navigationItem.leftBarButtonItem = disableEditBarButton
+    }
+    
+    public func disableEditMode() {
+        imagesTable.setEditing(false, animated: true)
+        navigationItem.leftBarButtonItem = enableEditBarButton
+    }
+    
     public func showImagePicker() {
         let alert = UIAlertController(title: NSLocalizedString("ImagePicker.SelectSource.Title"), message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: NSLocalizedString("ImagePicker.SelectSource.Camera"), style: .default) { _ in
@@ -119,7 +130,28 @@ public class HomeViewController: BaseViewController<DefaultHomePresenter>, HomeV
         return cell
     }
     
+    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let image = presenter.images.value[indexPath.row]
+            presenter.delete(image: image)
+        }
+    }
+    
     // MARK: - UITableViewDelegate
+    
+    public func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        if indexPath.section == 1 {
+            return .none
+        }
+        return .delete
+    }
+    
+    public func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        if indexPath.section == 1 {
+            return false
+        }
+        return true
+    }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -137,6 +169,7 @@ public class HomeViewController: BaseViewController<DefaultHomePresenter>, HomeV
     
     public func photoLibraryPickerView(didSelectAttachment attachment: AttachmentViewModel) {
         logTrace("Selected attachment: \(attachment)")
+        presenter.upload(attachment: attachment)
     }
     
     // MARK: - Private methods
@@ -148,23 +181,34 @@ public class HomeViewController: BaseViewController<DefaultHomePresenter>, HomeV
         return ""
     }
     
-    private lazy var editBarButton: UIBarButtonItem = {
+    private lazy var enableEditBarButton: UIBarButtonItem = {
         let button = UIBarButtonItem(barButtonSystemItem: .edit)
-        button.reactive.pressed = CocoaAction(editButtonAction)
+        button.reactive.pressed = CocoaAction(enableEditButtonAction)
         return button
     }()
-    
+
+    private lazy var disableEditBarButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(barButtonSystemItem: .done)
+        button.reactive.pressed = CocoaAction(disableEditButtonAction)
+        return button
+    }()
+
     private lazy var logoutBarButton: UIBarButtonItem = {
         let button = UIBarButtonItem(title: NSLocalizedString("Home.LogoutButton"), style: UIBarButtonItem.Style.plain, target: nil, action: nil)
         button.reactive.pressed = CocoaAction(logoutBarButtonAction)
         return button
     }()
     
-    private lazy var editButtonAction: Action<Void, Void, NoError> = {
+    private lazy var enableEditButtonAction: Action<Void, Void, NoError> = {
         let enabledIf = Property(presenter.userLogged.isNotNil)
         return Action<Void, Void, NoError>(enabledIf: enabledIf) { _ in return SignalProducer(value: ()) }
     }()
 
+    private lazy var disableEditButtonAction: Action<Void, Void, NoError> = {
+        let enabledIf = Property(presenter.userLogged.isNotNil)
+        return Action<Void, Void, NoError>(enabledIf: enabledIf) { _ in return SignalProducer(value: ()) }
+    }()
+    
     private lazy var logoutBarButtonAction: Action<Void, Void, NoError> = {
         let enabledIf = Property(presenter.userLogged.isNotNil)
         return Action<Void, Void, NoError>(enabledIf: enabledIf) { _ in return SignalProducer(value: ()) }

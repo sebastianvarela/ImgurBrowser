@@ -26,9 +26,14 @@ public class DefaultHomePresenter: HomePresenter {
         return Action<Void, Void, NoError> { _ in
             logTrace("Updating images")
             
-            return self.interactor.refreshImages()
-                .onProcessError(showOn: self.view, wireframe: self.wireframe)
-                .mapToVoid()
+            return SignalProducer { observer, lifetime in
+                lifetime += self.interactor.refreshImages()
+                    .observe(on: UIScheduler())
+                    .onFailed { self.view?.presentAlert(title: $0.title, subTitle: $0.subTitle) }
+                    .startWithResult { _ in
+                        observer.sendCompleted()
+                    }
+            }
         }
     }
     
@@ -48,7 +53,11 @@ public class DefaultHomePresenter: HomePresenter {
     }
     
     public func enableEditMode() {
-        
+        view?.enableEditMode()
+    }
+    
+    public func disableEditMode() {
+        view?.disableEditMode()
     }
     
     public func logout() {
@@ -59,6 +68,26 @@ public class DefaultHomePresenter: HomePresenter {
         wireframe.showLogin()
     }
     
+    public func upload(attachment: AttachmentViewModel) {
+        view?.showGlobalSpinnerView()
+        interactor.upload(attachment: attachment)
+            .start(on: UIScheduler())
+            .onProcessError(showOn: view, wireframe: wireframe)
+            .startWithCompleted {
+                self.view?.hideGlobalSpinnerView()
+            }
+    }
+    
+    public func delete(image: Image) {
+        view?.showGlobalSpinnerView()
+        interactor.delete(image: image)
+            .start(on: UIScheduler())
+            .onProcessError(showOn: view, wireframe: wireframe)
+            .startWithCompleted {
+                self.view?.hideGlobalSpinnerView()
+            }
+    }
+
     public func show(image: Image) {
         
     }

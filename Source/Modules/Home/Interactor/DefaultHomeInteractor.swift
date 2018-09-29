@@ -26,6 +26,16 @@ public class DefaultHomeInteractor: HomeInteractor {
         userController.logout()
     }
     
+    public func upload(attachment: AttachmentViewModel) -> SignalProducer<Void, UploadingAttachmentError> {
+        return imageController.upload(attachment: attachment)
+            .mapError(UploadingAttachmentError.map)
+    }
+    
+    public func delete(image: Image) -> SignalProducer<Void, DeletingImageError> {
+        return imageController.delete(image: image)
+            .mapError(DeletingImageError.map)
+    }
+    
     public func refreshImages() -> SignalProducer<Void, RefreshingImagesError> {
         return imageController.fetchImages()
             .mapError(RefreshingImagesError.map)

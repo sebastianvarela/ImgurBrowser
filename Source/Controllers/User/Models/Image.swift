@@ -7,6 +7,6 @@ public struct Image: Codable, ViewModel {
     public let height: Int
     public let size: Int
     public let deletehash: String
-    public let name: String
+    public let name: String?
     public let link: URL
 }

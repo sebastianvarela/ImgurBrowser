@@ -9,7 +9,10 @@ public protocol HomePresenter: Presenter {
     
     func addImage()
     func enableEditMode()
+    func disableEditMode()
     func logout()
     func login()
+    func upload(attachment: AttachmentViewModel)
+    func delete(image: Image)
     func show(image: Image)
 }

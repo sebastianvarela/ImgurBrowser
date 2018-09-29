@@ -49,7 +49,7 @@ public class AttachmentViewModel {
         guard let bytes = self.bytes else {
             return ""
         }
-        return bytes.base64EncodedString(options: .lineLength64Characters)
+        return bytes.base64EncodedString(options: .endLineWithCarriageReturn)
     }()
     
     public lazy var previewSize: Int64? = {
