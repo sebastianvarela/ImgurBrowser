@@ -97,6 +97,9 @@ public class HomeViewController: BaseViewController<DefaultHomePresenter>, HomeV
         
         alert.addAction(UIAlertAction(title: NSLocalizedString("ImagePicker.SelectSource.Cancel"), style: .cancel, handler: nil))
         
+        alert.popoverPresentationController?.sourceView = addImageTableViewCell
+        alert.popoverPresentationController?.sourceRect = addImageTableViewCell.bounds
+        
         present(alert, animated: true, completion: nil)
     }
     
