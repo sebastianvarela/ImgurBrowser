@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,11 +12,7 @@
         <!--Alert View Controller-->
         <scene sceneID="vDx-Ut-46G">
             <objects>
-                <viewController storyboardIdentifier="AlertViewController" id="2PJ-8D-qgN" customClass="AlertViewController" customModule="BKCF" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Rg2-Ln-dX3"/>
-                        <viewControllerLayoutGuide type="bottom" id="6aP-J2-fk0"/>
-                    </layoutGuides>
+                <viewController storyboardIdentifier="AlertViewController" id="2PJ-8D-qgN" customClass="AlertViewController" customModule="ImgurBrowser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="redraw" id="Thx-il-YBS">
                         <rect key="frame" x="0.0" y="0.0" width="367" height="404"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,7 +62,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54D-Vq-7Fc" userLabel="OkButtonContainer">
                                                 <rect key="frame" x="0.0" y="180" width="367" height="60"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLe-MQ-Axj" customClass="PowerButton" customModule="BKCF" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLe-MQ-Axj" customClass="PowerButton" customModule="ImgurBrowser" customModuleProvider="target">
                                                         <rect key="frame" x="45" y="10" width="277" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="2EQ-9M-754"/>
@@ -110,11 +105,11 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="XPR-Ft-EAs" secondAttribute="trailing" id="Nx5-fg-gqV"/>
-                            <constraint firstItem="XPR-Ft-EAs" firstAttribute="top" secondItem="Rg2-Ln-dX3" secondAttribute="bottom" id="V33-S5-1gb"/>
-                            <constraint firstItem="XPR-Ft-EAs" firstAttribute="leading" secondItem="Thx-il-YBS" secondAttribute="leading" id="YHX-ya-D4T"/>
+                            <constraint firstItem="WcL-IU-Kyc" firstAttribute="trailing" secondItem="XPR-Ft-EAs" secondAttribute="trailing" id="Nx5-fg-gqV"/>
+                            <constraint firstItem="XPR-Ft-EAs" firstAttribute="top" secondItem="WcL-IU-Kyc" secondAttribute="top" id="V33-S5-1gb"/>
+                            <constraint firstItem="XPR-Ft-EAs" firstAttribute="leading" secondItem="WcL-IU-Kyc" secondAttribute="leading" id="YHX-ya-D4T"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="bVZ-up-oWf"/>
+                        <viewLayoutGuide key="safeArea" id="WcL-IU-Kyc"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
