@@ -32,7 +32,7 @@ public class PhotoLibraryPickerController: UIViewController, UIImagePickerContro
             nativePickerController.sourceType = .photoLibrary
         }
         nativePickerController.mediaTypes = [kUTTypeImage as String]
-        nativePickerController.allowsEditing = true
+        nativePickerController.allowsEditing = false
         nativePickerController.delegate = self
         nativePickerController.navigationBar.isTranslucent = false
 
