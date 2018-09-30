@@ -27,9 +27,8 @@ public class RootWireframeiOS: RootWireframe {
         window.rootViewController = navController
     }
     
-    public func preview(images: [Image], focusOn: Int) {
-        let previewVC = HomePreviewViewController(images: images)
-        previewVC.currentPreviewItemIndex = focusOn
+    public func preview(attachment: AttachmentViewModel) {
+        let previewVC = PreviewViewController(attachment: attachment)
         navController.pushViewController(previewVC, animated: true)
     }
     

@@ -125,7 +125,7 @@
 		E2EC6DEC215F67D800596B6E /* ImgurError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EC6DEB215F67D800596B6E /* ImgurError.swift */; };
 		E2EC6DEE215F734000596B6E /* DeleteImageTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EC6DED215F734000596B6E /* DeleteImageTask.swift */; };
 		E2EC6DF0215F73EB00596B6E /* DeleteError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EC6DEF215F73EB00596B6E /* DeleteError.swift */; };
-		E2F1570D2160BDCE001817F1 /* HomePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F1570C2160BDCE001817F1 /* HomePreviewViewController.swift */; };
+		E2F1570D2160BDCE001817F1 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F1570C2160BDCE001817F1 /* PreviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -275,7 +275,7 @@
 		E2EC6DEB215F67D800596B6E /* ImgurError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurError.swift; sourceTree = "<group>"; };
 		E2EC6DED215F734000596B6E /* DeleteImageTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteImageTask.swift; sourceTree = "<group>"; };
 		E2EC6DEF215F73EB00596B6E /* DeleteError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteError.swift; sourceTree = "<group>"; };
-		E2F1570C2160BDCE001817F1 /* HomePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePreviewViewController.swift; sourceTree = "<group>"; };
+		E2F1570C2160BDCE001817F1 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -507,6 +507,7 @@
 				E2D7411F2156CA25009B6E08 /* PausableTimer.swift */,
 				E2D741202156CA25009B6E08 /* Utils.swift */,
 				E2EC6DDB215ECD5D00596B6E /* PhotoLibraryPickerController.swift */,
+				E2F1570C2160BDCE001817F1 /* PreviewViewController.swift */,
 				E2EC6DDD215ECECB00596B6E /* AttachmentViewModel.swift */,
 			);
 			path = Helpers;
@@ -614,7 +615,6 @@
 			children = (
 				E2D7412C2156E727009B6E08 /* HomeViewController.storyboard */,
 				E2D7412D2156E727009B6E08 /* HomeViewController.swift */,
-				E2F1570C2160BDCE001817F1 /* HomePreviewViewController.swift */,
 				E2D741302156E727009B6E08 /* HomeView.swift */,
 				E2952BF2215BED9400D1CA72 /* HomeImageCell.swift */,
 				E2952BF3215BED9400D1CA72 /* HomeImageCell.xib */,
@@ -955,7 +955,7 @@
 				E28B4134215959D70060E626 /* NetworkTokenTask.swift in Sources */,
 				E2D740D52156C0F7009B6E08 /* Interactor.swift in Sources */,
 				E22219212157982F00E89C11 /* LoginEvent.swift in Sources */,
-				E2F1570D2160BDCE001817F1 /* HomePreviewViewController.swift in Sources */,
+				E2F1570D2160BDCE001817F1 /* PreviewViewController.swift in Sources */,
 				E2D7417521577C6D009B6E08 /* LoginInteractor.swift in Sources */,
 				E2952BEF215AD32D00D1CA72 /* ImageController.swift in Sources */,
 				E2EC6DEE215F734000596B6E /* DeleteImageTask.swift in Sources */,
@@ -1171,6 +1171,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZD6FCCR3K6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1192,6 +1193,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZD6FCCR3K6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

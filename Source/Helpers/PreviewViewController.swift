@@ -3,12 +3,11 @@ import Kingfisher
 import Power
 import QuickLook
 
-public class HomePreviewViewController: QLPreviewController, QLPreviewControllerDelegate, QLPreviewControllerDataSource, ImgurBrowserNavigationControllerView {
-    private let images: [Image]
-    private var hiddenObservation: NSKeyValueObservation?
+public class PreviewViewController: QLPreviewController, QLPreviewControllerDelegate, QLPreviewControllerDataSource, ImgurBrowserNavigationControllerView {
+    private let attachment: AttachmentViewModel
 
-    public init(images: [Image]) {
-        self.images = images
+    public init(attachment: AttachmentViewModel) {
+        self.attachment = attachment
         super.init(nibName: nil, bundle: nil)
         delegate = self
         dataSource = self
@@ -23,12 +22,11 @@ public class HomePreviewViewController: QLPreviewController, QLPreviewController
     // MARK: QLPreviewControllerDataSource
     
     public func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
-        return images.count
+        return 1
     }
     
     public func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
-        let image = images[index]
-        return PreviewItem(image: image)
+        return PreviewItem(attachment: attachment)
     }
     
     // MARK: ImgurBrowserNavigationControllerView
@@ -61,14 +59,16 @@ public class HomePreviewViewController: QLPreviewController, QLPreviewController
         }
         return toolbars
     }
-}
-
-public class PreviewItem: NSObject, QLPreviewItem {
-    public let previewItemURL: URL?
-    public let previewItemTitle: String?
     
-    public init(image: Image) {
-        previewItemURL = image.link
-        previewItemTitle = image.name
+    // MARK: Internal type
+    
+    internal class PreviewItem: NSObject, QLPreviewItem {
+        internal let previewItemURL: URL?
+        internal let previewItemTitle: String?
+        
+        internal init(attachment: AttachmentViewModel) {
+            previewItemURL = attachment.resourceURL
+            previewItemTitle = NSLocalizedString("General.Preview.Title")
+        }
     }
 }

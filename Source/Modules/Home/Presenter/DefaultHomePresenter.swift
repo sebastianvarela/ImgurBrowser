@@ -1,4 +1,5 @@
 import Foundation
+import Kingfisher
 import Power
 import ReactiveSwift
 import Result
@@ -92,11 +93,18 @@ public class DefaultHomePresenter: HomePresenter {
     }
 
     public func show(image: Image) {
-        guard let index = images.value.firstIndex(where: { $0 == image }) else {
-            return
+        view?.showGlobalSpinnerView()
+        ImageDownloader.default.downloadImage(with: image.link, retrieveImageTask: nil, options: nil, progressBlock: nil) { image, error, _, _ in
+            self.view?.hideGlobalSpinnerView()
+            if let image = image {
+                let attachment = AttachmentViewModel(type: .image(image: image, exportType: .png))
+                self.wireframe.preview(attachment: attachment)
+            } else {
+                logError("Could not download Picture: \(error.textualDescription)")
+                self.view?.presentAlert(title: NSLocalizedString("General.Alert.ErrorTitle"),
+                                        subTitle: NSLocalizedString("General.Alert.ErrorBody"))
+            }
         }
-        
-        wireframe.preview(images: images.value, focusOn: index)
     }
     
     // MARK: - Private methods

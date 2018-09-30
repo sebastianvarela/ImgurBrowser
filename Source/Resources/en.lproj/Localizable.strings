@@ -6,6 +6,7 @@
 "General.Alert.CancelButton" = "Cancel";
 "General.Alert.ApplyButton" = "Apply";
 "General.Alert.AcceptButton" = "Accept";
+"General.Preview.Title" = "Preview";
 
 /* Image Picker */
 "ImagePicker.SelectSource.Title" = "Upload new photo";
