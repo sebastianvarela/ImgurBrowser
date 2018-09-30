@@ -27,6 +27,12 @@ public class RootWireframeiOS: RootWireframe {
         window.rootViewController = navController
     }
     
+    public func preview(images: [Image], focusOn: Int) {
+        let previewVC = HomePreviewViewController(images: images)
+        previewVC.currentPreviewItemIndex = focusOn
+        navController.pushViewController(previewVC, animated: true)
+    }
+    
     public func showLogin() {
         let loginVC = dependencies.loginViewController()
         let loginNav = ImgurBrowserNavigationController()

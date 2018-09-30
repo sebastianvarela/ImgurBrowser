@@ -92,7 +92,11 @@ public class DefaultHomePresenter: HomePresenter {
     }
 
     public func show(image: Image) {
+        guard let index = images.value.firstIndex(where: { $0 == image }) else {
+            return
+        }
         
+        wireframe.preview(images: images.value, focusOn: index)
     }
     
     // MARK: - Private methods
