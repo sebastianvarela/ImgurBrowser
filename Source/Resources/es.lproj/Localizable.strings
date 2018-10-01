@@ -10,7 +10,7 @@
 
 /* Image Picker */
 "ImagePicker.SelectSource.Title" = "Sube una foto";
-"ImagePicker.SelectSource.Gallery" = "Elije de la galería";
+"ImagePicker.SelectSource.Gallery" = "Elige de la galería";
 "ImagePicker.SelectSource.Camera" = "Saca una foto";
 "ImagePicker.SelectSource.Cancel" = "Cancelar";
 
